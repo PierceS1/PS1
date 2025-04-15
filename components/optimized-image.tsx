@@ -12,6 +12,7 @@ interface OptimizedImageProps {
   fill?: boolean
   priority?: boolean
   className?: string
+  loading?: "eager" | "lazy"
 }
 
 export function OptimizedImage({
@@ -22,6 +23,7 @@ export function OptimizedImage({
   fill = false,
   priority = false,
   className,
+  loading,
 }: OptimizedImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
   const [isError, setIsError] = useState(false)
@@ -44,6 +46,7 @@ export function OptimizedImage({
       className={cn(className)}
       quality={90}
       onError={handleError}
+      loading={loading}
     />
   )
 }

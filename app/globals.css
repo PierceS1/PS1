@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Logo blending styles */
 .logo-blend {
   position: relative;
@@ -43,4 +47,11 @@
 /* Subtle glow effect on hover */
 .logo-blend:hover img {
   filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.3)) brightness(1.1) contrast(1.1);
+}
+
+/* Custom utility classes for image filters */
+.img-filter-president {
+  filter: saturate(0.9) brightness(1.05) contrast(1.1) hue-rotate(-5deg);
+  -webkit-filter: saturate(0.9) brightness(1.05) contrast(1.1) hue-rotate(-5deg);
+  mix-blend-mode: normal;
 }

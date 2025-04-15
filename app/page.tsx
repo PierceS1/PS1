@@ -135,13 +135,8 @@ export default function HomePage() {
                           src="/images/pierce-speyrer.png"
                           alt="Pierce Speyrer, President of PS Premier Construction - Austin's leading construction professional"
                           fill
-                          className="object-cover object-center"
+                          className="object-cover object-center saturate-90 brightness-105 contrast-110 hue-rotate-[-5deg]"
                           loading="lazy"
-                          style={{
-                            filter: "saturate(0.9) brightness(1.05) contrast(1.1) hue-rotate(-5deg) clarity(1.1)",
-                            WebkitFilter: "saturate(0.9) brightness(1.05) contrast(1.1) hue-rotate(-5deg)",
-                            mixBlendMode: "normal",
-                          }}
                         />
                       </div>
                     </div>
