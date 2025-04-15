@@ -98,6 +98,20 @@ export function SchemaMarkup() {
             },
           },
         },
+        {
+          "@type": "ListItem",
+          position: 6,
+          item: {
+            "@type": "Service",
+            name: "Civil & Architectural Design Services",
+            description:
+              "Comprehensive civil and architectural design services through our trusted partner Architect Builder Group, offering custom designs, civil engineering solutions, and permit-ready drawings.",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "PS Premier Construction",
+            },
+          },
+        },
       ],
     },
   }

@@ -30,7 +30,7 @@ export default function HomePage() {
   // Staggered animation for service cards
   useEffect(() => {
     if (servicesAnimation.isVisible) {
-      const totalItems = 6 // Number of service cards
+      const totalItems = 6 // Updated number of service cards (removed Interior Renovations)
       let timer: NodeJS.Timeout
 
       for (let i = 0; i < totalItems; i++) {
@@ -207,33 +207,6 @@ export default function HomePage() {
                 >
                   <CardContent className="p-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-6 w-6"
-                      >
-                        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">Interior Renovations</h3>
-                    <p className="text-gray-300">
-                      Transform your space with our interior renovation services, including kitchen and bathroom
-                      remodels, custom cabinetry, and more.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card
-                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(3) ? "visible" : ""}`}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
                       <MapPin className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Land & Residential Development</h3>
@@ -244,7 +217,7 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
                 <Card
-                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(4) ? "visible" : ""}`}
+                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(3) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
@@ -277,7 +250,7 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
                 <Card
-                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(5) ? "visible" : ""}`}
+                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(4) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
@@ -309,6 +282,115 @@ export default function HomePage() {
                       <li className="flex items-start">
                         <span className="text-amber-500 mr-2">•</span>
                         <span>Code compliance and permitting</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card
+                  className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(5) ? "visible" : ""}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-6 w-6"
+                      >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Civil & Architectural Design Services</h3>
+                    <div className="flex items-center mb-4">
+                      <p className="text-gray-300">
+                        We now offer comprehensive civil and architectural design services through our trusted partner:
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 p-4 rounded-lg mb-4">
+                      <div className="flex justify-center">
+                        <Image
+                          src="/images/abg-ps-partnership.png"
+                          alt="Architect Builder Group & PS Premier Construction Partnership"
+                          width={300}
+                          height={200}
+                          className="h-auto w-full max-w-[300px]"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-col space-y-3">
+                      <div className="flex space-x-3">
+                        <a
+                          href="https://architectbuildergroup.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-5 w-5 text-red-500"
+                          >
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
+                          <span className="text-gray-300">Website</span>
+                        </a>
+                        <a
+                          href="https://www.instagram.com/architect.builder/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition-colors"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-5 w-5 text-pink-500"
+                          >
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                          </svg>
+                          <span className="text-gray-300">Instagram</span>
+                        </a>
+                      </div>
+                    </div>
+                    <ul className="mt-4 space-y-2 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="text-amber-500 mr-2">•</span>
+                        <span>Custom architectural designs</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-amber-500 mr-2">•</span>
+                        <span>Civil engineering solutions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-amber-500 mr-2">•</span>
+                        <span>Permit-ready drawings</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-amber-500 mr-2">•</span>
+                        <span>Seamless integration with construction</span>
                       </li>
                     </ul>
                   </CardContent>
