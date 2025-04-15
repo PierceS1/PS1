@@ -204,7 +204,7 @@ export default function TestimonialsPage() {
         <footer className="w-full border-t border-gray-800 bg-black py-6 text-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
             <div className="flex items-center">
-              <div className="logo-blend" style={{ maxWidth: "200px" }}>
+              <div className="logo-blend max-w-[200px]">
                 <div className="logo-background"></div>
                 <Image
                   src="/images/ps-premier-logo-wide.png"
