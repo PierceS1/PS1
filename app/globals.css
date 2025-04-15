@@ -1,0 +1,46 @@
+/* Logo blending styles */
+.logo-blend {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-blend::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-blend::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-blend img {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+}
+
+/* Enhance the gold/amber color in the logo */
+@media (prefers-color-scheme: dark) {
+  .logo-blend img {
+    filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.2)) brightness(1.05) contrast(1.05);
+  }
+}
+
+/* Subtle glow effect on hover */
+.logo-blend:hover img {
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.3)) brightness(1.1) contrast(1.1);
+}
