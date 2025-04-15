@@ -10,7 +10,6 @@ import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
 import { ContactForm } from "@/app/components/contact-form"
-import { TransformationShowcase } from "@/components/transformation-showcase"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useEffect, useState } from "react"
 import { SchemaMarkup } from "@/app/components/schema-markup"
@@ -427,9 +426,6 @@ export default function HomePage() {
               </div>
             </div>
           </section>
-
-          {/* Before & After Transformation Showcase */}
-          <TransformationShowcase />
 
           {/* Testimonials Section with Animation */}
           <section className="w-full py-12 md:py-16 bg-gray-950 text-white">
