@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import type { CSSProperties } from "react"
 
 interface OptimizedImageProps {
   src: string
@@ -13,6 +14,7 @@ interface OptimizedImageProps {
   priority?: boolean
   className?: string
   loading?: "eager" | "lazy"
+  style?: CSSProperties
 }
 
 export function OptimizedImage({
@@ -24,6 +26,7 @@ export function OptimizedImage({
   priority = false,
   className,
   loading,
+  style,
 }: OptimizedImageProps) {
   const [imgSrc, setImgSrc] = useState(src)
   const [isError, setIsError] = useState(false)
@@ -47,6 +50,7 @@ export function OptimizedImage({
       quality={90}
       onError={handleError}
       loading={loading}
+      style={style}
     />
   )
 }
