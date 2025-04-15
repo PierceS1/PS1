@@ -70,7 +70,7 @@ export function ImprovedHeader() {
             <div className={`logo-blend transition-all duration-300 ${scrolled ? "opacity-95" : "opacity-100"}`}>
               <Image
                 src="/images/ps-premier-logo-wide.png"
-                alt="PS Premier Construction Logo - Austin's Premier Construction Company"
+                alt="PS Premier Construction Logo"
                 width={220}
                 height={50}
                 className={`transition-all duration-300 ${scrolled ? "h-10 w-auto" : "h-12 w-auto"}`}

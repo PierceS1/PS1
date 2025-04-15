@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface MobileMenuProps {
   links: {
@@ -15,30 +15,9 @@ interface MobileMenuProps {
 
 export function MobileMenu({ links }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
-  }
-
-  const handleNavigation = (href: string) => {
-    setIsOpen(false)
-
-    // If it's a hash link to the homepage
-    if (href.startsWith("/#")) {
-      router.push("/")
-
-      // Wait for navigation to complete then scroll to the element
-      setTimeout(() => {
-        const id = href.substring(2)
-        const element = document.getElementById(id)
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" })
-        }
-      }, 100)
-    } else {
-      router.push(href)
-    }
   }
 
   return (
@@ -61,14 +40,15 @@ export function MobileMenu({ links }: MobileMenuProps) {
             <ul className="flex flex-col space-y-2">
               {links.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => handleNavigation(link.href)}
+                  <Link
+                    href={link.href}
                     className={`block w-full text-left px-6 py-3 text-base font-medium ${
                       link.isActive ? "text-amber-500" : "text-gray-300"
                     } transition-colors hover:bg-gray-800 hover:text-amber-400`}
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -102,10 +102,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="grid gap-6 lg:grid-cols-1 lg:gap-12 items-center mt-12">
-                <div
-                  className={`space-y-4 max-w-3xl mx-auto fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}
-                  style={{ transitionDelay: "0.2s" }}
-                >
+                <div className={`space-y-4 max-w-3xl mx-auto fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}>
                   <h3 className="text-2xl font-bold">Our Promise to You</h3>
                   <p className="text-gray-300">
                     When you work with us, you're family. That means open communication, honest pricing, and a
@@ -338,7 +335,6 @@ export default function HomePage() {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
                 <Card
                   className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                  style={{ transitionDelay: "0.1s" }}
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
@@ -362,7 +358,6 @@ export default function HomePage() {
                 </Card>
                 <Card
                   className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                  style={{ transitionDelay: "0.2s" }}
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
@@ -385,7 +380,6 @@ export default function HomePage() {
                 </Card>
                 <Card
                   className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                  style={{ transitionDelay: "0.3s" }}
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
@@ -408,7 +402,6 @@ export default function HomePage() {
                 </Card>
                 <Card
                   className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                  style={{ transitionDelay: "0.4s" }}
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
@@ -448,10 +441,7 @@ export default function HomePage() {
                   about working with us.
                 </p>
               </div>
-              <div
-                className={`scale-in ${testimonialsAnimation.isVisible ? "visible" : ""}`}
-                style={{ transitionDelay: "0.2s" }}
-              >
+              <div className={`scale-in ${testimonialsAnimation.isVisible ? "visible" : ""}`}>
                 <TestimonialCarousel />
               </div>
               <div className="text-center mt-8"></div>
