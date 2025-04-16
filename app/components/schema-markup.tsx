@@ -61,9 +61,9 @@ export function SchemaMarkup() {
           position: 3,
           item: {
             "@type": "Service",
-            name: "Interior Renovations",
+            name: "Land & Residential Development",
             description:
-              "Transform your space with our interior renovation services, including kitchen and bathroom remodels, custom cabinetry, and more.",
+              "From raw land acquisition to finished communities, we handle all aspects of development including permitting, infrastructure, and construction.",
             provider: {
               "@type": "LocalBusiness",
               name: "PS Premier Construction",
