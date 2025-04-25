@@ -74,11 +74,11 @@ export default function HomePage() {
                   className={`relative h-[400px] overflow-hidden rounded-xl slide-in-right ${heroAnimation.isVisible ? "visible" : ""}`}
                 >
                   <OptimizedImage
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_8942.jpg-gJNV5SzwtrI9MwyGuCWaXCPtJYsmTy.jpeg"
-                    alt="Luxury modern kitchen renovation by PS Premier Construction in Austin, Texas featuring custom cabinetry and high-end finishes"
+                    src="/images/modern-interior-lobby.jpeg"
+                    alt="Modern interior design by PS Premier Construction featuring contemporary shelving and natural lighting"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover hero-image-enhance"
                   />
                 </div>
               </div>
