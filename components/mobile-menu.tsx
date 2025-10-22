@@ -25,12 +25,12 @@ export function MobileMenu({ links }: MobileMenuProps) {
       <Button
         variant="default"
         size="icon"
-        className="bg-red-700 hover:bg-red-800 text-white border-none"
+        className="bg-brand-red hover:bg-brand-red-dark text-white border-none"
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-label="Toggle menu"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         <span className="sr-only">Toggle menu</span>
       </Button>
 
@@ -43,8 +43,8 @@ export function MobileMenu({ links }: MobileMenuProps) {
                   <Link
                     href={link.href}
                     className={`block w-full text-left px-6 py-3 text-base font-medium ${
-                      link.isActive ? "text-amber-500" : "text-gray-300"
-                    } transition-colors hover:bg-gray-800 hover:text-amber-400`}
+                      link.isActive ? "text-brand-amber" : "text-gray-300"
+                    } transition-colors hover:bg-gray-800 hover:text-brand-amber`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}

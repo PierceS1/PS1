@@ -37,7 +37,7 @@ const transformationProjects = [
     description: "Complete redesign of a living space with new flooring, lighting, and custom built-ins.",
     location: "Downtown Austin",
     beforeImage: "/dated-living-room.png",
-    afterImage: "/placeholder.svg?height=800&width=1200&query=modern+living+room+with+hardwood+floors",
+    afterImage: "/modern-living-room-hardwood.png",
     beforeAlt: "Outdated living room with carpet and old fixtures before transformation by PS Premier Construction",
     afterAlt:
       "Modern living room with hardwood floors and custom built-ins after transformation by PS Premier Construction",
@@ -74,7 +74,7 @@ export function TransformationShowcase() {
 
             <div className="mt-4 bg-gray-900 p-4 rounded-lg">
               <h3 className="text-xl font-bold">{activeProject.title}</h3>
-              <p className="text-amber-500">{activeProject.location}</p>
+              <p className="text-brand-amber">{activeProject.location}</p>
               <p className="mt-2 text-gray-300">{activeProject.description}</p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function TransformationShowcase() {
               {transformationProjects.map((project) => (
                 <Card
                   key={project.id}
-                  className={`bg-gray-900 border ${activeProject.id === project.id ? "border-amber-500" : "border-gray-800"} cursor-pointer hover:border-amber-500 transition-all`}
+                  className={`bg-gray-900 border ${activeProject.id === project.id ? "border-brand-amber" : "border-gray-800"} cursor-pointer hover:border-brand-amber transition-all`}
                   onClick={() => setActiveProject(project)}
                 >
                   <CardContent className="p-4">
@@ -105,7 +105,7 @@ export function TransformationShowcase() {
               </p>
               <a
                 href="#contact"
-                className="block w-full py-2 px-4 bg-red-700 hover:bg-red-800 text-white text-center rounded-md transition-colors"
+                className="block w-full py-2 px-4 bg-brand-red hover:bg-brand-red-dark text-white text-center rounded-md transition-colors"
               >
                 Get Started
               </a>

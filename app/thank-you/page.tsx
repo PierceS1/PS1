@@ -55,8 +55,8 @@ export default function ThankYouPage() {
                     key={index}
                     href={link.href}
                     className={`text-sm font-medium ${
-                      link.isActive ? "text-red-700" : "text-gray-700"
-                    } transition-colors hover:text-amber-600`}
+                      link.isActive ? "text-brand-red" : "text-gray-700"
+                    } transition-colors hover:text-brand-amber`}
                   >
                     {link.label}
                   </Link>
@@ -81,7 +81,7 @@ export default function ThankYouPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
-              <Button asChild size="lg" className="bg-red-700 hover:bg-red-800 text-white">
+              <Button asChild size="lg" className="bg-brand-red hover:bg-brand-red-dark text-white">
                 <Link href="/">Return to Home</Link>
               </Button>
             </div>
@@ -108,7 +108,7 @@ export default function ThankYouPage() {
               href="https://www.facebook.com/profile.php?id=61574805621220"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-red-700"
+              className="text-gray-600 hover:text-brand-red"
               aria-label="Visit our Facebook page"
             >
               <svg
@@ -121,7 +121,7 @@ export default function ThankYouPage() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5"
+                className="size-5"
               >
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
@@ -131,7 +131,7 @@ export default function ThankYouPage() {
               href="https://www.instagram.com/ps_premier_construction/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-red-700"
+              className="text-gray-600 hover:text-brand-red"
               aria-label="Visit our Instagram page"
             >
               <svg
@@ -144,7 +144,7 @@ export default function ThankYouPage() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5"
+                className="size-5"
               >
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />

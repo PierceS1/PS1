@@ -11,8 +11,8 @@ export default function LogoToolPage() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <Link href="/">
-            <Button variant="outline" className="border-gray-700 text-gray-300 hover:bg-gray-800">
-              <ArrowLeft className="h-4 w-4 mr-2" />
+            <Button variant="outline" className="border-gray-700 text-gray-300 hover:bg-gray-800 bg-transparent">
+              <ArrowLeft className="size-4 mr-2" />
               Return to Homepage
             </Button>
           </Link>
@@ -25,15 +25,15 @@ export default function LogoToolPage() {
             logo, adjust the settings as needed, and download the transparent version.
           </p>
 
-          <div className="mt-4 p-4 bg-amber-900/20 border border-amber-800/30 rounded-md">
-            <h2 className="text-amber-400 font-medium mb-2">Instructions:</h2>
+          <div className="mt-4 p-4 bg-brand-amber/20 border border-brand-amber/30 rounded-md">
+            <h2 className="text-brand-amber font-medium mb-2">Instructions:</h2>
             <ol className="list-decimal list-inside text-gray-300 space-y-2">
               <li>Upload your logo using the button below</li>
               <li>Adjust the threshold and tolerance sliders to remove the background</li>
               <li>Download the transparent version</li>
               <li>
                 Upload the downloaded file to your project as{" "}
-                <code className="bg-gray-800 px-2 py-1 rounded text-amber-300">
+                <code className="bg-gray-800 px-2 py-1 rounded text-brand-amber">
                   /public/images/ps-premier-logo-transparent.png
                 </code>
               </li>
@@ -52,11 +52,11 @@ export default function LogoToolPage() {
           <ol className="list-decimal list-inside text-gray-300 space-y-2">
             <li>
               Name the file{" "}
-              <code className="bg-gray-800 px-2 py-1 rounded text-amber-300">ps-premier-logo-transparent.png</code>
+              <code className="bg-gray-800 px-2 py-1 rounded text-brand-amber">ps-premier-logo-transparent.png</code>
             </li>
             <li>
               Upload it to your project's{" "}
-              <code className="bg-gray-800 px-2 py-1 rounded text-amber-300">public/images/</code> folder
+              <code className="bg-gray-800 px-2 py-1 rounded text-brand-amber">public/images/</code> folder
             </li>
             <li>The header component is already configured to use this file if it exists</li>
           </ol>

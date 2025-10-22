@@ -90,15 +90,15 @@ export function ImprovedHeader() {
                   className={`relative px-3 py-2 text-sm font-medium rounded-md transition-all duration-200
                 ${
                   currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")
-                    ? "text-amber-500"
-                    : "text-gray-300 hover:text-amber-400"
+                    ? "text-brand-amber"
+                    : "text-gray-300 hover:text-brand-amber"
                 }
                 ${scrolled ? "hover:bg-gray-800/50" : "hover:bg-black/30"}
               `}
                 >
                   {link.label}
                   {(currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")) && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-amber-500 rounded-full"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-amber rounded-full"></span>
                   )}
                 </Link>
               ))}
@@ -108,10 +108,10 @@ export function ImprovedHeader() {
             <Link
               href="#contact"
               className={`ml-4 flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
-            ${scrolled ? "bg-red-700 hover:bg-red-800 text-white" : "bg-red-700/90 hover:bg-red-700 text-white"}
+            ${scrolled ? "bg-brand-red hover:bg-brand-red-dark text-white" : "bg-brand-red/90 hover:bg-brand-red text-white"}
           `}
             >
-              <Phone className="h-4 w-4 mr-2" />
+              <Phone className="size-4 mr-2" />
               <span>Get a Quote</span>
             </Link>
           </div>

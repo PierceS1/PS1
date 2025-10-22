@@ -28,10 +28,10 @@ export function TransparentLogoGenerator() {
     ctx.fillText("CONSTRUCTION", 20, 70)
 
     // Draw decorative elements
-    ctx.fillStyle = "#b91c1c" // red-700
+    ctx.fillStyle = "#b91c1c" // brand-red
     ctx.fillRect(10, 20, 5, 40)
 
-    ctx.fillStyle = "#f59e0b" // amber-500
+    ctx.fillStyle = "#f59e0b" // brand-amber
     ctx.fillRect(380, 30, 10, 3)
 
     // Generate PNG data URL

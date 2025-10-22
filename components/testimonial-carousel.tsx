@@ -76,18 +76,18 @@ export function TestimonialCarousel() {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <Card className="bg-gray-900 border border-gray-800 text-white overflow-hidden">
+      <Card className="bg-gray-900 border-gray-800 text-white overflow-hidden">
         <CardContent className="p-6 md:p-8">
           <div className="flex items-center mb-4">
             {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-amber-500 text-amber-500" />
+              <Star key={i} className="size-5 fill-brand-amber text-brand-amber" />
             ))}
           </div>
-          <blockquote className="border-l-4 border-red-700 pl-4 italic mb-6 text-lg text-gray-300">
+          <blockquote className="border-l-4 border-brand-red pl-4 italic mb-6 text-lg text-gray-300">
             &quot;{testimonials[currentIndex].quote}&quot;
           </blockquote>
           <div className="mt-4">
-            <p className="font-semibold text-amber-500">{testimonials[currentIndex].name}</p>
+            <p className="font-semibold text-brand-amber">{testimonials[currentIndex].name}</p>
             <p className="text-sm text-gray-300">{testimonials[currentIndex].location}</p>
             <p className="text-sm text-gray-300">{testimonials[currentIndex].project}</p>
           </div>
@@ -102,13 +102,13 @@ export function TestimonialCarousel() {
           className="bg-gray-800 border-gray-700 hover:bg-gray-700 text-white"
           aria-label="Previous testimonial"
         >
-          <ChevronLeft className="h-4 w-4" />
+          <ChevronLeft className="size-4" />
         </Button>
         <div className="flex gap-1 items-center">
           {testimonials.map((_, index) => (
             <span
               key={index}
-              className={`block h-2 w-2 rounded-full ${index === currentIndex ? "bg-amber-500" : "bg-gray-600"}`}
+              className={`block size-2 rounded-full ${index === currentIndex ? "bg-brand-amber" : "bg-gray-600"}`}
               aria-hidden="true"
             />
           ))}
@@ -120,7 +120,7 @@ export function TestimonialCarousel() {
           className="bg-gray-800 border-gray-700 hover:bg-gray-700 text-white"
           aria-label="Next testimonial"
         >
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="size-4" />
         </Button>
       </div>
     </div>

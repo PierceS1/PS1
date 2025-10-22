@@ -138,7 +138,7 @@ export function LogoTransparencyTool() {
             onClick={handleUploadClick}
             className="w-full h-32 flex flex-col items-center justify-center border-2 border-dashed border-gray-700 bg-gray-800 hover:bg-gray-700"
           >
-            <Upload className="h-8 w-8 mb-2" />
+            <Upload className="size-8 mb-2" />
             <span>{fileName || "Upload your logo"}</span>
             <span className="text-xs text-gray-400 mt-1">PNG, JPG or SVG</span>
           </Button>
@@ -223,18 +223,18 @@ export function LogoTransparencyTool() {
           variant="outline"
           onClick={handleReset}
           disabled={!originalImage}
-          className="border-gray-700 text-gray-300 hover:bg-gray-800"
+          className="border-gray-700 text-gray-300 hover:bg-gray-800 bg-transparent"
         >
-          <Trash2 className="h-4 w-4 mr-2" />
+          <Trash2 className="size-4 mr-2" />
           Reset
         </Button>
 
         <Button
           onClick={handleDownload}
           disabled={!processedImage || isProcessing}
-          className="bg-red-700 hover:bg-red-800 text-white"
+          className="bg-brand-red hover:bg-brand-red-dark text-white"
         >
-          <Download className="h-4 w-4 mr-2" />
+          <Download className="size-4 mr-2" />
           Download Transparent Logo
         </Button>
       </CardFooter>

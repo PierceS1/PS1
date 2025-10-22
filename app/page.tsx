@@ -117,7 +117,7 @@ export default function HomePage() {
                     decision, keeping you informed and involved as much as you want to be. Your dream is our blueprint.
                   </p>
                   <div className="flex flex-col pt-4 items-center">
-                    <div className="text-5xl font-bold text-amber-500 pulse">200+</div>
+                    <div className="text-5xl font-bold text-brand-amber pulse">200+</div>
                     <div className="text-xl text-gray-300">Projects Completed</div>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function HomePage() {
                     className={`w-full md:w-2/3 space-y-4 bg-[#0a0d17] p-6 rounded-r-lg slide-in-right ${presidentAnimation.isVisible ? "visible" : ""}`}
                   >
                     <h3 className="text-3xl font-bold text-white">Meet Pierce Speyrer</h3>
-                    <h4 className="text-xl text-amber-500">President of PS Premier Construction</h4>
+                    <h4 className="text-xl text-brand-amber">President of PS Premier Construction</h4>
                     <p className="text-gray-300">
                       Pierce Speyrer is raising the bar in residential & commercial construction by bringing
                       corporate-level strategy, consistent communication, and a client-first mindset to an industry
@@ -178,7 +178,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(0) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <Building className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Commercial Construction</h3>
@@ -192,7 +192,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(1) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <Home className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Residential Construction</h3>
@@ -206,7 +206,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(2) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <MapPin className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Land & Residential Development</h3>
@@ -220,7 +220,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(3) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <Building className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Commercial Tenant Improvement & Turnkey Solutions</h3>
@@ -231,19 +231,19 @@ export default function HomePage() {
                     </p>
                     <ul className="mt-4 space-y-2 text-gray-300">
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Tenant build-outs and improvements</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Property renovations between tenants</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>ADA compliance upgrades</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Streamlined project management for property portfolios</span>
                       </li>
                     </ul>
@@ -253,7 +253,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(4) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <Wrench className="h-6 w-6" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Mechanical, Electrical & Plumbing Services</h3>
@@ -264,23 +264,23 @@ export default function HomePage() {
                     </p>
                     <ul className="mt-4 space-y-2 text-gray-300">
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>HVAC installation, maintenance, and upgrades</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Electrical system design and installation</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Plumbing installations and repairs</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Energy-efficient system upgrades</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Code compliance and permitting</span>
                       </li>
                     </ul>
@@ -290,7 +290,7 @@ export default function HomePage() {
                   className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(5) ? "visible" : ""}`}
                 >
                   <CardContent className="p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-white mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -342,7 +342,7 @@ export default function HomePage() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-5 w-5 text-red-500"
+                            className="h-5 w-5 text-brand-amber"
                           >
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
@@ -365,7 +365,7 @@ export default function HomePage() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className="h-5 w-5 text-pink-500"
+                            className="h-5 w-5 text-brand-amber"
                           >
                             <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -377,19 +377,19 @@ export default function HomePage() {
                     </div>
                     <ul className="mt-4 space-y-2 text-gray-300">
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Custom architectural designs</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Civil engineering solutions</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Permit-ready drawings</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-brand-amber mr-2">•</span>
                         <span>Seamless integration with construction</span>
                       </li>
                     </ul>
@@ -546,14 +546,14 @@ export default function HomePage() {
                 </p>
                 <div className="space-y-4 mt-6">
                   <div className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-amber-500" />
+                    <Phone className="h-6 w-6 text-brand-amber" />
                     <div>
                       <h3 className="font-semibold text-white">Give Us a Call</h3>
                       <p className="text-sm text-gray-300">337-565-7690 (We actually answer our phone!)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Mail className="h-6 w-6 text-amber-500" />
+                    <Mail className="h-6 w-6 text-brand-amber" />
                     <div>
                       <h3 className="font-semibold text-white">Drop Us a Line</h3>
                       <p className="text-sm text-gray-300">ps@pspremierconstruction.com</p>
@@ -593,7 +593,7 @@ export default function HomePage() {
                 href="https://www.facebook.com/profile.php?id=61574805621220"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-amber-500 transition-colors duration-300"
+                className="text-gray-400 hover:text-brand-amber transition-colors duration-300"
                 aria-label="Visit our Facebook page"
               >
                 <svg
@@ -616,7 +616,7 @@ export default function HomePage() {
                 href="https://www.instagram.com/ps_premier_construction/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-amber-500 transition-colors duration-300"
+                className="text-gray-400 hover:text-brand-amber transition-colors duration-300"
                 aria-label="Visit our Instagram page"
               >
                 <svg

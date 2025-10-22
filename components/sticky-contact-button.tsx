@@ -33,9 +33,9 @@ export function StickyContactButton() {
       }`}
       aria-hidden={!isVisible}
     >
-      <Button asChild size="lg" className="bg-red-700 hover:bg-red-800 text-white rounded-full shadow-lg">
+      <Button asChild size="lg" className="bg-brand-red hover:bg-brand-red-dark text-white rounded-full shadow-lg">
         <Link href="#contact" aria-label="Contact Us">
-          <Phone className="h-5 w-5 mr-2" />
+          <Phone className="size-5 mr-2" />
           <span>Contact Us</span>
         </Link>
       </Button>

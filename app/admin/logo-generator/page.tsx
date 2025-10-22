@@ -16,7 +16,10 @@ export default function LogoGeneratorPage() {
         <TransparentLogoGenerator />
 
         <div className="mt-12">
-          <Link href="/" className="px-4 py-2 bg-red-700 hover:bg-red-800 text-white rounded-md transition-colors">
+          <Link
+            href="/"
+            className="px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-white rounded-md transition-colors"
+          >
             Return to Homepage
           </Link>
         </div>
