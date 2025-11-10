@@ -16,6 +16,7 @@ export function ImprovedHeader() {
     { href: "#about", label: "About", id: "about" },
     { href: "#services", label: "Services", id: "services" },
     { href: "#projects", label: "Projects", id: "projects" },
+    { href: "/blog", label: "Blog", id: "blog" },
     { href: "/testimonials", label: "Testimonials", id: "testimonials" },
     { href: "#contact", label: "Contact", id: "contact" },
   ]
@@ -69,7 +70,7 @@ export function ImprovedHeader() {
           <Link href="/" className="relative flex items-center">
             <div className={`logo-blend transition-all duration-300 ${scrolled ? "opacity-95" : "opacity-100"}`}>
               <Image
-                src="/images/ps-premier-logo-wide.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0083-hGiqiQ3fGgF21Oo0g0ffox5tn9GI2Y.jpeg"
                 alt="PS Premier Construction Logo"
                 width={220}
                 height={50}
@@ -89,7 +90,9 @@ export function ImprovedHeader() {
                   href={link.href}
                   className={`relative px-3 py-2 text-sm font-medium rounded-md transition-all duration-200
                 ${
-                  currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")
+                  currentSection === link.id ||
+                  (link.href === "/testimonials" && link.id === "testimonials") ||
+                  (link.href === "/blog" && link.id === "blog")
                     ? "text-brand-amber"
                     : "text-gray-300 hover:text-brand-amber"
                 }
@@ -97,14 +100,15 @@ export function ImprovedHeader() {
               `}
                 >
                   {link.label}
-                  {(currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")) && (
+                  {(currentSection === link.id ||
+                    (link.href === "/testimonials" && link.id === "testimonials") ||
+                    (link.href === "/blog" && link.id === "blog")) && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-amber rounded-full"></span>
                   )}
                 </Link>
               ))}
             </nav>
 
-            {/* Contact Button */}
             <Link
               href="#contact"
               className={`ml-4 flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
@@ -112,7 +116,7 @@ export function ImprovedHeader() {
           `}
             >
               <Phone className="size-4 mr-2" />
-              <span>Get a Quote</span>
+              <span>Request a Consultation</span>
             </Link>
           </div>
 

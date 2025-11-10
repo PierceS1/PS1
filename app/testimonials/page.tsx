@@ -117,6 +117,14 @@ export default function TestimonialsPage() {
               <Link href="https://facebook.com" className="text-gray-400 hover:text-white">
                 Facebook
               </Link>
+              <Link
+                href="https://www.linkedin.com/in/pierce-speyrer-b60115195/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                LinkedIn
+              </Link>
               <Link href="https://instagram.com" className="text-gray-400 hover:text-white">
                 Instagram
               </Link>
