@@ -125,7 +125,7 @@ export default function TestimonialsPage() {
               >
                 LinkedIn
               </Link>
-              <Link href="https://instagram.com" className="text-gray-400 hover:text-white">
+              <Link href="https://www.instagram.com/pspremierconstruction/" className="text-gray-400 hover:text-white">
                 Instagram
               </Link>
             </div>

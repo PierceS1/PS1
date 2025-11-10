@@ -684,7 +684,7 @@ export default function HomePage() {
                 className={`flex flex-col items-center justify-center space-y-4 text-center fade-in ${projectsAnimation.isVisible ? "visible" : ""}`}
               >
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Proudest Moments</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recent Jobs</h2>
                   <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Every project tells a story. Here are a few of our favorites from around Austin that showcase what
                     we can create together.
@@ -924,7 +924,7 @@ export default function HomePage() {
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="https://www.instagram.com/ps_premier_construction/"
+                href="https://www.instagram.com/pspremierconstruction/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-brand-amber transition-colors duration-300"

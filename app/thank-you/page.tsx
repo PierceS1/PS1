@@ -153,7 +153,7 @@ export default function ThankYouPage() {
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
-              href="https://www.instagram.com/ps_premier_construction/"
+              href="https://www.instagram.com/pspremierconstruction/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-brand-red"
