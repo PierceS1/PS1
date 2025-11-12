@@ -63,7 +63,7 @@ export function ImprovedHeader() {
         <div className="flex items-center justify-between">
           <Link href="/" className="relative flex items-center shrink-0">
             <Image
-              src="/images/ps-premier-logo-transparent.svg"
+              src="/images/ps-premier-logo-gold.png"
               alt="PS Premier Construction Logo"
               width={180}
               height={50}
