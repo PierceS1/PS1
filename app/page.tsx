@@ -81,6 +81,12 @@ export default function HomePage() {
                   </p>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row">
                     <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
+                    <Link
+                      href="/about"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white"
+                    >
+                      Learn About Us
+                    </Link>
                   </div>
                 </div>
                 <div
@@ -98,7 +104,11 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
+          {/* About Section Removed - Now on /about page */}
+          {/* Process Section Removed - Now on /process page */}
+          {/* Materials Section Removed - Now on /process page */}
+
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div ref={aboutAnimation.ref} className={`fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}>
                 {/* Section 1: Positioning */}
@@ -189,6 +199,27 @@ export default function HomePage() {
                   <div className="text-center mb-12">
                     <div className="inline-block bg-brand-amber/10 px-6 py-2 rounded-full mb-4">
                       <span className="text-brand-amber font-bold text-lg">200+ Projects Completed</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-16">
+                    <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 max-w-2xl mx-auto">
+                      <Star className="h-12 w-12 text-brand-amber mx-auto mb-4" />
+                      <h3 className="text-2xl font-bold mb-3 text-center">See What Our Neighbors Are Saying</h3>
+                      <p className="text-gray-300 mb-6 text-center">
+                        Check out our reviews and ratings from real Austin homeowners on Google.
+                      </p>
+                      <div className="text-center">
+                        <Link
+                          href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
+                        >
+                          <Star className="size-5" />
+                          View Our Google Reviews
+                        </Link>
+                      </div>
                     </div>
                   </div>
 
@@ -653,26 +684,6 @@ export default function HomePage() {
                   </Card>
                 </Link>
               </div>
-
-              {/* Google Business Profile CTA with strategic link */}
-              <div className="mt-12 text-center">
-                <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 max-w-2xl mx-auto">
-                  <Star className="h-12 w-12 text-brand-amber mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-3">See What Our Neighbors Are Saying</h3>
-                  <p className="text-gray-300 mb-6">
-                    Check out our reviews and ratings from real Austin homeowners on Google.
-                  </p>
-                  <Link
-                    href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
-                  >
-                    <Star className="size-5" />
-                    View Our Google Reviews
-                  </Link>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -686,12 +697,11 @@ export default function HomePage() {
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recent Jobs</h2>
                   <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Every project tells a story. Here are a few of our favorites from around Austin that showcase what
-                    we can create together.
+                    Every project tells a story. Here are a few of our favorites from around Austin.
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12">
                 <Card
                   className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
                 >
@@ -706,12 +716,8 @@ export default function HomePage() {
                   </div>
                   <CardContent className="p-4">
                     <h3 className="text-lg font-bold text-white">Commercial Roofing Project</h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 line-clamp-3">
                       Professional commercial flat roof replacement featuring advanced waterproofing membrane systems.
-                      This comprehensive roofing project included complete tear-off, new underlayment installation, and
-                      high-performance flat roofing materials designed for Austin's climate. Our experienced crew
-                      completed this commercial roof on schedule while ensuring zero business disruption for the
-                      property owner.
                     </p>
                   </CardContent>
                 </Card>
@@ -721,20 +727,16 @@ export default function HomePage() {
                   <div className="relative aspect-video">
                     <OptimizedImage
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-12-NFZkcor9738CQI559lujpl7N5izS6K.jpeg"
-                      alt="Modern Austin living room renovation featuring contemporary design with pop art, leather furniture, and natural light by PS Premier Construction"
+                      alt="Modern Austin living room renovation featuring contemporary design by PS Premier Construction"
                       fill
                       className="object-cover"
                       loading="lazy"
                     />
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Modern Austin Living Room Remodel</h3>
-                    <p className="text-sm text-gray-300">
-                      Contemporary living space transformation featuring floor-to-ceiling windows, light wood flooring,
-                      and modern fixtures. This stylish renovation includes custom lighting design with statement
-                      pendant and floor lamps, creating an open and airy atmosphere perfect for modern Austin living.
-                      The space showcases clean lines, natural materials, and thoughtful design that maximizes natural
-                      light while maintaining comfort and functionality.
+                    <h3 className="text-lg font-bold text-white">Modern Austin Living Room</h3>
+                    <p className="text-sm text-gray-300 line-clamp-3">
+                      Contemporary living space transformation featuring floor-to-ceiling windows and modern fixtures.
                     </p>
                   </CardContent>
                 </Card>
@@ -744,7 +746,7 @@ export default function HomePage() {
                   <div className="relative aspect-video">
                     <OptimizedImage
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0115.png-woinRbMi603fIfnimeOd53x8hbEyTg.jpeg"
-                      alt="Professional tile installation in Steiner Ranch bathroom and hallway featuring large-format beige porcelain tile by PS Premier Construction"
+                      alt="Professional tile installation in Steiner Ranch by PS Premier Construction"
                       fill
                       className="object-cover"
                       loading="lazy"
@@ -752,12 +754,8 @@ export default function HomePage() {
                   </div>
                   <CardContent className="p-4">
                     <h3 className="text-lg font-bold text-white">Steiner Ranch Tile Installation</h3>
-                    <p className="text-sm text-gray-300">
-                      Complete tile renovation in Steiner Ranch featuring premium large-format porcelain tile
-                      installation throughout bathroom and hallway spaces. This precision tile work included custom
-                      layout planning, professional surface preparation, and expert installation with clean grout lines
-                      and perfect alignment. Our skilled craftsmen transformed these spaces with durable, beautiful tile
-                      that will last for decades while enhancing the home's overall aesthetic and value.
+                    <p className="text-sm text-gray-300 line-clamp-3">
+                      Complete tile renovation featuring premium large-format porcelain tile installation.
                     </p>
                   </CardContent>
                 </Card>
@@ -767,23 +765,28 @@ export default function HomePage() {
                   <div className="relative aspect-video">
                     <OptimizedImage
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1489-uixeXZfwohHwb2G06PKzzC58L6tyw9.png"
-                      alt="Professional exterior home renovation featuring gutter installation and painting work in Austin, Texas by PS Premier Construction"
+                      alt="Professional exterior home renovation in Austin by PS Premier Construction"
                       fill
                       className="object-cover"
                       loading="lazy"
                     />
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Austin Home Exterior Renovation</h3>
-                    <p className="text-sm text-gray-300">
-                      Complete exterior renovation featuring professional gutter installation, fresh paint, and updated
-                      trim work. This comprehensive exterior upgrade enhanced both curb appeal and weather protection
-                      for this Austin home. Our skilled team completed all exterior work including new seamless gutters,
-                      premium paint application, and precision trim installation while maintaining the home's original
-                      architectural charm.
+                    <h3 className="text-lg font-bold text-white">Austin Exterior Renovation</h3>
+                    <p className="text-sm text-gray-300 line-clamp-3">
+                      Complete exterior renovation featuring professional gutter installation and fresh paint.
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+
+              <div className="mt-12 text-center">
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white"
+                >
+                  View All Projects
+                </Link>
               </div>
             </div>
           </section>

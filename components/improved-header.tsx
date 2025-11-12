@@ -10,27 +10,24 @@ export function ImprovedHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [currentSection, setCurrentSection] = useState("")
 
-  // Update the navLinks array
   const navLinks = [
-    { href: "#", label: "Home", id: "home" },
-    { href: "#about", label: "About", id: "about" },
-    { href: "#services", label: "Services", id: "services" },
-    { href: "#projects", label: "Projects", id: "projects" },
+    { href: "/", label: "Home", id: "home" },
+    { href: "/about", label: "About", id: "about" },
+    { href: "/process", label: "Process", id: "process" },
+    { href: "/#services", label: "Services", id: "services" },
+    { href: "/portfolio", label: "Portfolio", id: "portfolio" },
     { href: "/blog", label: "Blog", id: "blog" },
     { href: "/testimonials", label: "Testimonials", id: "testimonials" },
-    { href: "#contact", label: "Contact", id: "contact" },
   ]
 
-  // Handle scroll events to change header appearance
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         setScrolled(true)
       } else {
         setScrolled(false)
       }
 
-      // Determine active section
       const sections = navLinks.filter((link) => link.href.startsWith("#")).map((link) => link.id)
 
       for (const section of sections) {
@@ -51,59 +48,52 @@ export function ImprovedHeader() {
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Initial check
+    handleScroll()
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [navLinks])
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/80 py-2 shadow-md"
-          : "bg-gradient-to-b from-black to-transparent py-4"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
+        scrolled ? "bg-white shadow-sm border-gray-200 py-3" : "bg-white/95 backdrop-blur-sm border-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="relative flex items-center">
-            <div className={`logo-blend transition-all duration-300 ${scrolled ? "opacity-95" : "opacity-100"}`}>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0083-hGiqiQ3fGgF21Oo0g0ffox5tn9GI2Y.jpeg"
-                alt="PS Premier Construction Logo"
-                width={220}
-                height={50}
-                className={`transition-all duration-300 ${scrolled ? "h-10 w-auto" : "h-12 w-auto"}`}
-                priority
-              />
-            </div>
+          <Link href="/" className="relative flex items-center shrink-0">
+            <Image
+              src="/images/ps-premier-logo-transparent.svg"
+              alt="PS Premier Construction Logo"
+              width={180}
+              height={50}
+              className={`transition-all duration-300 ${scrolled ? "h-10 w-auto" : "h-12 w-auto"}`}
+              priority
+            />
             <span className="sr-only">PS Premier Construction</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             <nav className="flex items-center space-x-1">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <Link
-                  key={index}
+                  key={link.id}
                   href={link.href}
-                  className={`relative px-3 py-2 text-sm font-medium rounded-md transition-all duration-200
+                  className={`relative px-4 py-2 text-[15px] font-medium tracking-tight transition-all duration-200
                 ${
                   currentSection === link.id ||
                   (link.href === "/testimonials" && link.id === "testimonials") ||
                   (link.href === "/blog" && link.id === "blog")
-                    ? "text-brand-amber"
-                    : "text-gray-300 hover:text-brand-amber"
+                    ? "text-brand-red"
+                    : "text-gray-700 hover:text-brand-red"
                 }
-                ${scrolled ? "hover:bg-gray-800/50" : "hover:bg-black/30"}
               `}
                 >
                   {link.label}
                   {(currentSection === link.id ||
                     (link.href === "/testimonials" && link.id === "testimonials") ||
                     (link.href === "/blog" && link.id === "blog")) && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-amber rounded-full"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-red rounded-full"></span>
                   )}
                 </Link>
               ))}
@@ -111,17 +101,15 @@ export function ImprovedHeader() {
 
             <Link
               href="#contact"
-              className={`ml-4 flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
-            ${scrolled ? "bg-brand-red hover:bg-brand-red-dark text-white" : "bg-brand-red/90 hover:bg-brand-red text-white"}
-          `}
+              className="ml-6 flex items-center gap-2 px-5 py-2.5 rounded-md text-[15px] font-semibold transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white shadow-sm hover:shadow-md"
             >
-              <Phone className="size-4 mr-2" />
-              <span>Request a Consultation</span>
+              <Phone className="size-4" />
+              <span>Get a Quote</span>
             </Link>
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <MobileMenu links={navLinks} />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
+import { ChatWidget } from "@/components/chat-widget"
 
 export const metadata: Metadata = {
   title: "PS Premier Construction - Austin's Premier Construction Company",
@@ -69,7 +70,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   )
 }
