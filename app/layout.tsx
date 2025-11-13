@@ -2,6 +2,7 @@ import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
 import { ChatWidget } from "@/components/chat-widget"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "PS Premier Construction - Austin's Premier Construction Company",
@@ -70,6 +71,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script id="tealium-utag-data" strategy="beforeInteractive">
+          {`var utag_data = {};`}
+        </Script>
+        <Script id="tealium-utag" strategy="afterInteractive">
+          {`
+            (function(a,b,c,d){
+              a='https://tags.tiqcdn.com/utag/marketingcenter/common/prod/utag.js';
+              b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+              a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+            })();
+          `}
+        </Script>
+        <Script id="tealium-parameters" strategy="beforeInteractive">
+          {`window.Parameters = window.Parameters || {ExternalUid: 'LOC1B02B18A7'}`}
+        </Script>
+
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-QF8GS27JKD" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QF8GS27JKD');
+          `}
+        </Script>
+      </head>
       <body>
         {children}
         <ChatWidget />
