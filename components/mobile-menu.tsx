@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -47,14 +47,14 @@ export function MobileMenu({ links }: MobileMenuProps) {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 animate-in fade-in duration-200"
+          className="fixed inset-0 bg-black opacity-50 backdrop-blur-sm z-40 animate-in fade-in duration-200"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
       )}
 
       <div
-        className={`fixed top-[73px] left-0 right-0 bottom-0 z-50 bg-white transform transition-transform duration-300 ease-out overflow-y-auto ${
+        className={`fixed top-[73px] left-0 right-0 bottom-0 z-50 bg-background transform transition-transform duration-300 ease-out overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -72,7 +72,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
               >
                 <Link
                   href={link.href}
-                  className="block w-full text-left px-5 py-4 text-lg font-medium rounded-lg transition-all duration-200 text-gray-700 hover:text-brand-red hover:bg-red-50 active:scale-[0.98]"
+                  className="block w-full text-left px-5 py-4 text-lg font-medium rounded-lg transition-all duration-200 text-foreground hover:text-brand-red hover:bg-muted active:scale-[0.98]"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

@@ -55,7 +55,7 @@ export function ImprovedHeader() {
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-[#8B7355] shadow-lg py-3" : "bg-[#8B7355] py-4"
+        scrolled ? "bg-gray-900 shadow-lg py-3" : "bg-gray-900 py-4"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

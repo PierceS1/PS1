@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { MessageCircle, X, Send } from "lucide-react"
+import { MessageCircle, X, Send } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 interface Message {
@@ -137,7 +137,7 @@ export function ChatWidget() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#B8860B] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl md:h-16 md:w-16"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-brand-amber text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl md:h-16 md:w-16"
         aria-label="Open chat"
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
@@ -145,15 +145,15 @@ export function ChatWidget() {
 
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 flex h-[600px] w-[380px] flex-col rounded-2xl bg-white shadow-2xl md:h-[650px] md:w-[420px]">
+        <div className="fixed bottom-24 right-6 z-50 flex h-[600px] w-[380px] flex-col rounded-2xl bg-background shadow-2xl md:h-[650px] md:w-[420px]">
           {/* Header */}
-          <div className="flex items-center gap-3 rounded-t-2xl bg-gradient-to-r from-[#1a1a1a] to-[#2d2d2d] p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#B8860B]">
+          <div className="flex items-center gap-3 rounded-t-2xl bg-gradient-to-r from-gray-950 to-gray-900 p-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-amber">
               <MessageCircle className="h-5 w-5 text-white" />
             </div>
             <div>
               <h3 className="font-semibold text-white">PS Premier Construction</h3>
-              <p className="text-xs text-gray-300">Typically replies instantly</p>
+              <p className="text-xs text-muted-foreground">Typically replies instantly</p>
             </div>
           </div>
 
@@ -163,7 +163,7 @@ export function ChatWidget() {
               <div key={idx} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                    message.role === "user" ? "bg-[#B8860B] text-white" : "bg-gray-100 text-gray-900"
+                    message.role === "user" ? "bg-brand-amber text-white" : "bg-muted text-foreground"
                   }`}
                 >
                   <p className="text-sm leading-relaxed">{message.content}</p>
@@ -173,18 +173,18 @@ export function ChatWidget() {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="max-w-[80%] rounded-2xl bg-gray-100 px-4 py-2">
+                <div className="max-w-[80%] rounded-2xl bg-muted px-4 py-2">
                   <div className="flex gap-1">
                     <div
-                      className="h-2 w-2 animate-bounce rounded-full bg-gray-400"
+                      className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"
                       style={{ animationDelay: "0ms" }}
                     />
                     <div
-                      className="h-2 w-2 animate-bounce rounded-full bg-gray-400"
+                      className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"
                       style={{ animationDelay: "150ms" }}
                     />
                     <div
-                      className="h-2 w-2 animate-bounce rounded-full bg-gray-400"
+                      className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"
                       style={{ animationDelay: "300ms" }}
                     />
                   </div>
@@ -195,12 +195,12 @@ export function ChatWidget() {
             {/* Quick Questions */}
             {messages.length === 1 && !isLoading && (
               <div className="space-y-2">
-                <p className="text-xs text-gray-500">Quick questions:</p>
+                <p className="text-xs text-muted-foreground">Quick questions:</p>
                 {QUICK_QUESTIONS.map((question, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleQuickQuestion(question)}
-                    className="block w-full rounded-lg border border-gray-200 p-3 text-left text-sm transition-all hover:border-[#B8860B] hover:bg-gray-50"
+                    className="block w-full rounded-lg border border-border p-3 text-left text-sm transition-all hover:border-brand-amber hover:bg-muted"
                   >
                     {question}
                   </button>
@@ -210,15 +210,15 @@ export function ChatWidget() {
 
             {/* Contact Form */}
             {showContactForm && (
-              <div className="rounded-2xl border-2 border-[#B8860B] bg-white p-4">
-                <h4 className="mb-3 font-semibold text-gray-900">Get a Free Consultation</h4>
+              <div className="rounded-2xl border-2 border-brand-amber bg-background p-4">
+                <h4 className="mb-3 font-semibold text-foreground">Get a Free Consultation</h4>
                 <form onSubmit={handleSubmitContact} className="space-y-3">
                   <input
                     type="text"
                     placeholder="Your name"
                     value={contactInfo.name}
                     onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#B8860B] focus:outline-none"
+                    className="w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-brand-amber focus:outline-none"
                     required
                   />
                   <input
@@ -226,7 +226,7 @@ export function ChatWidget() {
                     placeholder="Phone number"
                     value={contactInfo.phone}
                     onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#B8860B] focus:outline-none"
+                    className="w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-brand-amber focus:outline-none"
                     required
                   />
                   <input
@@ -234,10 +234,10 @@ export function ChatWidget() {
                     placeholder="Email"
                     value={contactInfo.email}
                     onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#B8860B] focus:outline-none"
+                    className="w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-brand-amber focus:outline-none"
                     required
                   />
-                  <Button type="submit" disabled={isLoading} className="w-full bg-[#B8860B] hover:bg-[#9a7209]">
+                  <Button type="submit" disabled={isLoading} className="w-full bg-brand-amber hover:bg-brand-amber/90">
                     Submit
                   </Button>
                 </form>
@@ -253,7 +253,7 @@ export function ChatWidget() {
               e.preventDefault()
               if (input.trim()) sendMessage(input)
             }}
-            className="border-t border-gray-200 p-4"
+            className="border-t border-border p-4"
           >
             <div className="flex gap-2">
               <input
@@ -261,13 +261,13 @@ export function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 rounded-full border border-gray-300 px-4 py-2 text-sm focus:border-[#B8860B] focus:outline-none"
+                className="flex-1 rounded-full border border-border px-4 py-2 text-sm focus:border-brand-amber focus:outline-none"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#B8860B] text-white transition-all hover:scale-105 disabled:opacity-50"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-amber text-white transition-all hover:scale-105 disabled:opacity-50"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
