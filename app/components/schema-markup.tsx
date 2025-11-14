@@ -80,7 +80,7 @@ export function SchemaMarkup() {
       "https://www.facebook.com/profile.php?id=61574805621220",
       "https://www.instagram.com/ps_premier_construction/",
       "https://www.linkedin.com/in/pierce-speyrer-b60115195/",
-      "https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5",
+      "https://g.page/r/CZaWrbGUCHA0EAE/review",
     ],
     aggregateRating: {
       "@type": "AggregateRating",

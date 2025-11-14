@@ -3,20 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Home,
-  Building,
-  Phone,
-  Mail,
-  MapPin,
-  Wrench,
-  Star,
-  CheckCircle,
-  Calendar,
-  DollarSign,
-  ClipboardCheck,
-  Palette,
-} from "lucide-react"
+import { Home, Building, Phone, Mail, MapPin, Wrench, Star, CheckCircle, Calendar, DollarSign, ClipboardCheck, Palette } from 'lucide-react'
 import { OptimizedImage } from "@/components/optimized-image"
 import { ImprovedHeader } from "@/components/improved-header"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
@@ -65,40 +52,42 @@ export default function HomePage() {
 
         <main className="flex-1">
           {/* Hero Section with Animation */}
-          <section id="home" className="w-full py-12 md:py-24 lg:py-32 bg-black text-white animated-bg">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <section id="home" className="w-full relative py-12 md:py-24 lg:py-32 text-white">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0125-Xo7WswK9TnfAmTePrYwrNpHdBgTW9A.jpeg"
+                alt="Luxury custom home in Austin by PS Premier Construction"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-black/50" />
+            </div>
+
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
               <div
                 ref={heroAnimation.ref}
-                className={`grid gap-6 lg:grid-cols-2 lg:gap-12 items-center ${heroAnimation.isVisible ? "visible" : ""}`}
+                className={`max-w-3xl mx-auto text-center ${heroAnimation.isVisible ? "visible" : ""}`}
               >
-                <div className={`space-y-4 slide-in-left ${heroAnimation.isVisible ? "visible" : ""}`}>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className={`space-y-6 fade-in ${heroAnimation.isVisible ? "visible" : ""}`}>
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
                     Luxury Remodeling and Custom Builds in Austin
                   </h1>
-                  <p className="max-w-[600px] text-gray-300 md:text-xl">
+                  <p className="max-w-[700px] mx-auto text-gray-100 text-lg md:text-xl drop-shadow-md">
                     Serving West Lake, Tarrytown, Barton Creek, and Central Austin with premium construction services.
                     Transform your home or business with Austin's trusted construction partner.
                   </p>
-                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center pt-4">
                     <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
                     <Link
                       href="/about"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white"
                     >
                       Learn About Us
                     </Link>
                   </div>
-                </div>
-                <div
-                  className={`relative h-[400px] overflow-hidden rounded-xl slide-in-right ${heroAnimation.isVisible ? "visible" : ""}`}
-                >
-                  <OptimizedImage
-                    src="/images/worker-pressure-washing-fence.png"
-                    alt="PS Premier Construction professional worker performing pressure washing and fence maintenance work in Austin, Texas"
-                    fill
-                    priority
-                    className="object-cover hero-image-enhance"
-                  />
                 </div>
               </div>
             </div>
@@ -211,7 +200,7 @@ export default function HomePage() {
                       </p>
                       <div className="text-center">
                         <Link
-                          href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
+                          href="https://g.page/r/CZaWrbGUCHA0EAE/review"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
@@ -707,7 +696,7 @@ export default function HomePage() {
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1491.png-sdKtvyMfFEFS9t0ThPI42kSxRGi52H.jpeg"
+                      src="/images/img-1491.jpeg"
                       alt="Commercial flat roof replacement and waterproofing project in Austin by PS Premier Construction"
                       fill
                       className="object-cover"
@@ -726,7 +715,7 @@ export default function HomePage() {
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-12-NFZkcor9738CQI559lujpl7N5izS6K.jpeg"
+                      src="/images/image-12.jpeg"
                       alt="Modern Austin living room renovation featuring contemporary design by PS Premier Construction"
                       fill
                       className="object-cover"
@@ -745,7 +734,7 @@ export default function HomePage() {
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0115.png-woinRbMi603fIfnimeOd53x8hbEyTg.jpeg"
+                      src="/images/img-0115.jpeg"
                       alt="Professional tile installation in Steiner Ranch by PS Premier Construction"
                       fill
                       className="object-cover"
@@ -764,7 +753,7 @@ export default function HomePage() {
                 >
                   <div className="relative aspect-video">
                     <OptimizedImage
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1489-uixeXZfwohHwb2G06PKzzC58L6tyw9.png"
+                      src="/images/img-1489.png"
                       alt="Professional exterior home renovation in Austin by PS Premier Construction"
                       fill
                       className="object-cover"
@@ -869,7 +858,7 @@ export default function HomePage() {
               </p>
               {/* Google Business Profile link in footer */}
               <Link
-                href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
+                href="https://g.page/r/CZaWrbGUCHA0EAE/review"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-brand-amber hover:text-white mt-2 inline-block transition-colors"

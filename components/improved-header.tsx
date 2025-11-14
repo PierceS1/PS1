@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
-import { Phone } from "lucide-react"
+import { Phone } from 'lucide-react'
 import { MobileMenu } from "@/components/mobile-menu"
 
 export function ImprovedHeader() {
@@ -55,22 +54,17 @@ export function ImprovedHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
-        scrolled ? "bg-white shadow-sm border-gray-200 py-3" : "bg-white/95 backdrop-blur-sm border-transparent py-4"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? "bg-[#8B7355] shadow-lg py-3" : "bg-[#8B7355] py-4"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-8">
           <Link href="/" className="relative flex items-center shrink-0">
-            <Image
-              src="/images/ps-premier-logo-gold.png"
-              alt="PS Premier Construction Logo"
-              width={180}
-              height={50}
-              className={`transition-all duration-300 ${scrolled ? "h-10 w-auto" : "h-12 w-auto"}`}
-              priority
-            />
-            <span className="sr-only">PS Premier Construction</span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-white tracking-tight">PS PREMIER</span>
+              <span className="text-xs font-medium text-white/90 tracking-widest">CONSTRUCTION</span>
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-1">
@@ -84,8 +78,8 @@ export function ImprovedHeader() {
                   currentSection === link.id ||
                   (link.href === "/testimonials" && link.id === "testimonials") ||
                   (link.href === "/blog" && link.id === "blog")
-                    ? "text-brand-red"
-                    : "text-gray-700 hover:text-brand-red"
+                    ? "text-white"
+                    : "text-white/80 hover:text-white"
                 }
               `}
                 >
@@ -93,7 +87,7 @@ export function ImprovedHeader() {
                   {(currentSection === link.id ||
                     (link.href === "/testimonials" && link.id === "testimonials") ||
                     (link.href === "/blog" && link.id === "blog")) && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-red rounded-full"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></span>
                   )}
                 </Link>
               ))}
