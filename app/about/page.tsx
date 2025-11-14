@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ImprovedHeader } from "@/components/improved-header"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
-import { CheckCircle, Star, Calendar, DollarSign } from "lucide-react"
+import { CheckCircle, Star, Calendar, DollarSign } from 'lucide-react'
 
 export default function AboutPage() {
   return (
@@ -159,12 +159,12 @@ export default function AboutPage() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative reveal visible">
-                  <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl bg-gray-800 hover-lift">
+                  <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl hover-lift">
                     <Image
                       src="/pierce-speyrer-photo.png"
                       alt="Pierce Speyrer, President of PS Premier Construction"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       priority
                     />
                   </div>

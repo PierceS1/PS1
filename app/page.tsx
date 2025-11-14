@@ -214,12 +214,12 @@ export default function HomePage() {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="relative">
-                      <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl bg-gray-800">
+                      <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl">
                         <Image
                           src="/pierce-speyrer-photo.png"
                           alt="Pierce Speyrer, President of PS Premier Construction"
                           fill
-                          className="object-cover"
+                          className="object-cover object-center"
                           priority
                         />
                       </div>
