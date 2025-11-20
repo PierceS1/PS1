@@ -3,7 +3,20 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Home, Building, Phone, Mail, MapPin, Wrench, Star, CheckCircle, Calendar, DollarSign, ClipboardCheck, Palette } from 'lucide-react'
+import {
+  Home,
+  Building,
+  Phone,
+  Mail,
+  MapPin,
+  Wrench,
+  Star,
+  CheckCircle,
+  Calendar,
+  DollarSign,
+  ClipboardCheck,
+  Palette,
+} from "lucide-react"
 import { OptimizedImage } from "@/components/optimized-image"
 import { ImprovedHeader } from "@/components/improved-header"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
@@ -56,7 +69,7 @@ export default function HomePage() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0125-Xo7WswK9TnfAmTePrYwrNpHdBgTW9A.jpeg"
+                src="/images/img-0125.jpeg"
                 alt="Luxury custom home in Austin by PS Premier Construction"
                 fill
                 className="object-cover"
@@ -79,11 +92,12 @@ export default function HomePage() {
                     Serving West Lake, Tarrytown, Barton Creek, and Central Austin with premium construction services.
                     Transform your home or business with Austin's trusted construction partner.
                   </p>
+                  {/* CHANGE: Updated padding and sizing to match AnimatedCTAButton dimensions */}
                   <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center pt-4">
                     <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
                     <Link
-                      href="/about"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white"
+                      href="#neighborhoods"
+                      className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white"
                     >
                       Learn About Us
                     </Link>
@@ -586,7 +600,7 @@ export default function HomePage() {
           </section>
 
           {/* Service Areas / Neighborhoods Section with GBP Link */}
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
+          <section id="neighborhoods" className="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
