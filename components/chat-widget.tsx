@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { MessageCircle, X, Send } from 'lucide-react'
+import { MessageCircle, X, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface Message {
@@ -97,14 +97,15 @@ export function ChatWidget() {
     setIsLoading(true)
 
     try {
-      await fetch("/api/contact", {
+      await fetch("/api/hubspot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: contactInfo.name,
+          firstName: contactInfo.name.split(" ")[0] || contactInfo.name,
+          lastName: contactInfo.name.split(" ").slice(1).join(" ") || "",
           phone: contactInfo.phone,
           email: contactInfo.email,
-          message: `Chat conversation: ${messages.map((m) => `${m.role}: ${m.content}`).join("\n")}`,
+          message: `Chat conversation:\n${messages.map((m) => `${m.role}: ${m.content}`).join("\n")}`,
           source: "Chat Widget",
         }),
       })
