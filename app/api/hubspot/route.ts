@@ -11,7 +11,6 @@ export async function POST(request: Request) {
     const { firstName, lastName, email, phone, projectType, message, source } = body
 
     if (!HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_ID) {
-      console.error("[v0] HubSpot credentials missing")
       return NextResponse.json({ error: "HubSpot integration not configured" }, { status: 500 })
     }
 
@@ -73,12 +72,10 @@ export async function POST(request: Request) {
 
     if (!hubspotResponse.ok) {
       const errorText = await hubspotResponse.text()
-      console.error("[v0] HubSpot API error:", errorText)
       throw new Error(`HubSpot API error: ${hubspotResponse.status}`)
     }
 
     const result = await hubspotResponse.json()
-    console.log("[v0] HubSpot submission successful:", result)
 
     return NextResponse.json({
       success: true,
@@ -86,7 +83,6 @@ export async function POST(request: Request) {
       hubspotContactId: result.inlineMessage,
     })
   } catch (error) {
-    console.error("[v0] Error submitting to HubSpot:", error)
     return NextResponse.json({ error: "Failed to submit contact information" }, { status: 500 })
   }
 }

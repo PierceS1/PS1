@@ -80,7 +80,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ message: response })
   } catch (error) {
-    console.error("[v0] Chat API error:", error)
     return NextResponse.json(
       {
         message:

@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ImprovedHeader } from "@/components/improved-header"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
-import { CheckCircle, Star, Calendar, DollarSign } from 'lucide-react'
+import { CheckCircle, Star, Calendar, DollarSign } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -141,7 +141,7 @@ export default function AboutPage() {
                       href="https://g.page/r/CZaWrbGUCHA0EAE/review"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
+                      className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors animate-pulse hover:animate-none"
                     >
                       <Star className="size-5" />
                       View Our Google Reviews
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative reveal visible">
-                  <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl hover-lift">
+                  <div className="aspect-[2/3] max-w-md mx-auto relative rounded-xl overflow-hidden shadow-2xl ring-2 ring-brand-amber/20 hover:ring-brand-amber/40 transition-all duration-300 hover-lift">
                     <Image
                       src="/pierce-speyrer-photo.png"
                       alt="Pierce Speyrer, President of PS Premier Construction"
@@ -167,6 +167,7 @@ export default function AboutPage() {
                       className="object-cover object-center"
                       priority
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
                   </div>
                 </div>
 

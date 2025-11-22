@@ -74,7 +74,6 @@ export function ChatWidget() {
         setTimeout(() => setShowContactForm(true), 1000)
       }
     } catch (error) {
-      console.error("[v0] Chat error:", error)
       setMessages((prev) => [
         ...prev,
         {
@@ -120,7 +119,6 @@ export function ChatWidget() {
       setShowContactForm(false)
       setContactInfo({ name: "", phone: "", email: "" })
     } catch (error) {
-      console.error("[v0] Contact submission error:", error)
       setMessages((prev) => [
         ...prev,
         {

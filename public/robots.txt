@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pspremierconstruction.com/sitemap.xml
+
+# Disallow admin and API routes
+User-agent: *
+Disallow: /api/
+Disallow: /admin/

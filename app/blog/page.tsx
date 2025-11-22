@@ -139,7 +139,7 @@ export default function BlogPage() {
                 </p>
                 <Link
                   href="/#contact"
-                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-semibold transition-colors animate-pulse hover:animate-none"
                 >
                   Schedule a Consultation
                   <ArrowRight className="h-5 w-5" />

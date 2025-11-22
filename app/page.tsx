@@ -26,6 +26,8 @@ import { ContactForm } from "@/app/components/contact-form"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useEffect, useState } from "react"
 import { SchemaMarkup } from "@/app/components/schema-markup"
+import { FAQSchema } from "@/app/components/faq-schema"
+import { BreadcrumbSchema } from "@/app/components/breadcrumb-schema"
 
 export default function HomePage() {
   // Animation hooks
@@ -60,6 +62,8 @@ export default function HomePage() {
   return (
     <>
       <SchemaMarkup />
+      <FAQSchema />
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://pspremierconstruction.com/" }]} />
       <div className="flex min-h-screen flex-col">
         <ImprovedHeader />
 
@@ -97,7 +101,7 @@ export default function HomePage() {
                     <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
                     <Link
                       href="#neighborhoods"
-                      className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white"
+                      className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white animate-pulse hover:animate-none"
                     >
                       Learn About Us
                     </Link>
@@ -217,7 +221,7 @@ export default function HomePage() {
                           href="https://g.page/r/CZaWrbGUCHA0EAE/review"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
+                          className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors animate-pulse hover:animate-none"
                         >
                           <Star className="size-5" />
                           View Our Google Reviews
@@ -228,7 +232,7 @@ export default function HomePage() {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="relative">
-                      <div className="aspect-square max-w-md mx-auto relative rounded-lg overflow-hidden shadow-2xl">
+                      <div className="aspect-[2/3] max-w-md mx-auto relative rounded-xl overflow-hidden shadow-2xl ring-2 ring-brand-amber/20 hover:ring-brand-amber/40 transition-all duration-300">
                         <Image
                           src="/pierce-speyrer-photo.png"
                           alt="Pierce Speyrer, President of PS Premier Construction"
@@ -236,6 +240,7 @@ export default function HomePage() {
                           className="object-cover object-center"
                           priority
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
                       </div>
                     </div>
 
@@ -608,8 +613,7 @@ export default function HomePage() {
                     Serving Austin's Premier Neighborhoods
                   </h2>
                   <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed">
-                    From West Lake Hills to Tarrytown, we're proud to serve Austin's most sought-after communities with
-                    exceptional construction and remodeling services.
+                    Click on each neighborhood to see more projects
                   </p>
                 </div>
               </div>
@@ -698,7 +702,9 @@ export default function HomePage() {
                 className={`flex flex-col items-center justify-center space-y-4 text-center fade-in ${projectsAnimation.isVisible ? "visible" : ""}`}
               >
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recent Jobs</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Property Management Commercial All The Way To Simple HOA Repairs
+                  </h2>
                   <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Every project tells a story. Here are a few of our favorites from around Austin.
                   </p>
@@ -781,15 +787,6 @@ export default function HomePage() {
                     </p>
                   </CardContent>
                 </Card>
-              </div>
-
-              <div className="mt-12 text-center">
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-base font-semibold transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white"
-                >
-                  View All Projects
-                </Link>
               </div>
             </div>
           </section>

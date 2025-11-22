@@ -55,7 +55,6 @@ export function ContactForm() {
         setSubmitStatus("error")
       }
     } catch (error) {
-      console.error("[v0] Form submission error:", error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -209,8 +208,7 @@ export function ContactForm() {
         <p className="text-sm text-gray-400 mb-2">Or schedule a meeting directly:</p>
         <Button
           type="button"
-          variant="outline"
-          className="w-full bg-transparent"
+          className="w-full bg-brand-red text-white hover:bg-brand-red-dark animate-pulse hover:animate-none"
           onClick={() =>
             window.open(
               process.env.NEXT_PUBLIC_HUBSPOT_MEETING_LINK || "https://meetings.hubspot.com/your-link",

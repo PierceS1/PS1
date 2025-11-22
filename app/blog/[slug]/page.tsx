@@ -3,6 +3,8 @@ import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react"
 import { ImprovedHeader } from "@/components/improved-header"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { notFound } from "next/navigation"
+import { BlogPostSchema } from "@/app/components/blog-post-schema"
+import { BreadcrumbSchema } from "@/app/components/breadcrumb-schema"
 
 const blogPosts = {
   "kitchen-remodeling-cost-guide-austin": {
@@ -223,8 +225,24 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  const datePublished = new Date(post.date).toISOString()
+
   return (
     <>
+      <BlogPostSchema
+        title={post.title}
+        description={post.content.substring(0, 155)}
+        datePublished={datePublished}
+        dateModified={datePublished}
+        authorName="Pierce Speyrer"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://pspremierconstruction.com/" },
+          { name: "Blog", url: "https://pspremierconstruction.com/blog" },
+          { name: post.title, url: `https://pspremierconstruction.com/blog/${params.slug}` },
+        ]}
+      />
       <div className="flex min-h-screen flex-col">
         <ImprovedHeader />
 
@@ -286,7 +304,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </p>
                 <Link
                   href="/#contact"
-                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-semibold transition-colors animate-pulse hover:animate-none"
                 >
                   Schedule a Consultation
                 </Link>

@@ -18,7 +18,7 @@ export function AnimatedCTAButton({ href, children, className = "" }: AnimatedCT
     <Button
       asChild
       size="lg"
-      className={`bg-brand-red hover:bg-brand-red-dark text-white relative overflow-hidden group ${className}`}
+      className={`bg-brand-red hover:bg-brand-red-dark text-white relative overflow-hidden group animate-pulse hover:animate-none ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
