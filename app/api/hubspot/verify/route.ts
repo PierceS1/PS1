@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server"
 
 export async function GET() {
-  const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN
-  const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID
-  const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID
+  const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN || ""
+  const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID || ""
+  const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID || ""
 
   const config = {
-    hasAccessToken: !!HUBSPOT_ACCESS_TOKEN,
-    hasPortalId: !!HUBSPOT_PORTAL_ID,
-    hasFormId: !!HUBSPOT_FORM_ID,
+    hasAccessToken: HUBSPOT_ACCESS_TOKEN.length > 0,
+    hasPortalId: HUBSPOT_PORTAL_ID.length > 0,
+    hasFormId: HUBSPOT_FORM_ID.length > 0,
   }
 
   if (!HUBSPOT_ACCESS_TOKEN && !HUBSPOT_PORTAL_ID) {
@@ -20,7 +20,7 @@ export async function GET() {
   }
 
   // If using Private Apps API, verify token
-  if (HUBSPOT_ACCESS_TOKEN) {
+  if (HUBSPOT_ACCESS_TOKEN && HUBSPOT_ACCESS_TOKEN.length > 0) {
     try {
       const response = await fetch("https://api.hubapi.com/integrations/v1/me", {
         headers: {

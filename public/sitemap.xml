@@ -9,12 +9,7 @@
   </url>
   
   <!-- Main Pages -->
-  <url>
-    <loc>https://pspremierconstruction.com/about</loc>
-    <lastmod>2025-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Removed /about page - content merged into portfolio -->
   <url>
     <loc>https://pspremierconstruction.com/portfolio</loc>
     <lastmod>2025-01-12</lastmod>

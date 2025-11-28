@@ -11,7 +11,6 @@ export function ImprovedHeader() {
 
   const navLinks = [
     { href: "/", label: "Home", id: "home" },
-    { href: "/about", label: "About", id: "about" },
     { href: "/process", label: "Process", id: "process" },
     { href: "/#services", label: "Services", id: "services" },
     { href: "/portfolio", label: "Portfolio", id: "portfolio" },

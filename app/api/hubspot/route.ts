@@ -3,14 +3,14 @@ import { NextResponse } from "next/server"
 // HubSpot configuration
 const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID
 const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID
-const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN
+const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN || ""
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
     const { firstName, lastName, email, phone, projectType, message, source } = body
 
-    if (HUBSPOT_ACCESS_TOKEN) {
+    if (HUBSPOT_ACCESS_TOKEN && HUBSPOT_ACCESS_TOKEN.length > 0) {
       // Use Private Apps API (Contacts API v3) for direct contact creation
       return await createContactWithAPI(body)
     } else if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID) {
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    if (!HUBSPOT_ACCESS_TOKEN) {
+    if (!HUBSPOT_ACCESS_TOKEN || HUBSPOT_ACCESS_TOKEN.length === 0) {
       return NextResponse.json({
         configured: false,
         method: HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID ? "forms_api" : "none",

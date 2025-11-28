@@ -7,6 +7,7 @@ import { OptimizedImage } from "@/components/optimized-image"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
 import Link from "next/link"
 import Image from "next/image"
+import { CheckCircle, Star, Calendar, DollarSign } from "lucide-react"
 
 export default function PortfolioPage() {
   return (
@@ -18,11 +19,190 @@ export default function PortfolioPage() {
         <section className="w-full py-16 md:py-24 bg-gray-900 text-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center fade-in-bottom visible">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-6">Our Recent Work</h1>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-6">
+                Our Work & Who We Are
+              </h1>
               <p className="text-xl text-gray-300">
-                Every project tells a story. Here are some of our favorites from around Austin that showcase what we can
-                create together.
+                Every project tells a story. Explore our portfolio and learn about the team that makes it happen.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Your Vision, Our Expertise Section */}
+        <section className="w-full py-16 md:py-24 bg-black text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6">Your Vision, Our Expertise</h2>
+              <p className="text-xl text-gray-300">
+                We lead your project from first walk-through to final punch list with transparency, quality, and care.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto slide-up visible">
+              <div className="space-y-6 text-gray-300 text-lg">
+                <p>
+                  You want a remodel that increases value and improves how you live. You need a builder who listens,
+                  plans, and delivers without delays and excuses.
+                </p>
+                <p className="font-semibold text-white text-xl">
+                  PS Premier Construction leads your project from first walk-through to final punch list.
+                </p>
+                <div className="mt-8">
+                  <h3 className="text-2xl font-bold text-white mb-6">We manage:</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Design coordination</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Material selections</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Scheduling and trades</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Budget control</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What You Get Section */}
+        <section className="w-full py-16 md:py-24 bg-gray-900 text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12 text-center fade-in visible">
+                What You Get
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <CheckCircle className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Clean and Organized Job Sites</h3>
+                    <p className="text-gray-300">
+                      Your property is treated with respect. We maintain clean work areas and protect your home
+                      throughout construction.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <Calendar className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Clear Communication</h3>
+                    <p className="text-gray-300">
+                      Weekly updates keep you informed. No surprises, no guessing. You always know what's happening.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <Star className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Quality-Focused Trades</h3>
+                    <p className="text-gray-300">
+                      No low-bid crews. We work with skilled professionals who take pride in their craftsmanship.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <DollarSign className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Transparent Pricing</h3>
+                    <p className="text-gray-300">
+                      Clear pricing and change order control. You know what you're paying for and why.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Pierce Section */}
+        <section className="w-full py-16 md:py-24 bg-black text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="relative reveal visible">
+                  <div className="aspect-[2/3] max-w-md mx-auto relative rounded-xl overflow-hidden shadow-2xl ring-2 ring-brand-amber/20 hover:ring-brand-amber/40 transition-all duration-300 hover-lift">
+                    <Image
+                      src="/pierce-speyrer-photo.png"
+                      alt="Pierce Speyrer, President of PS Premier Construction"
+                      fill
+                      className="object-cover object-center"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
+                  </div>
+                </div>
+
+                <div className="space-y-6 slide-in-right visible">
+                  <div>
+                    <h2 className="text-4xl font-bold tracking-tighter mb-3">Meet Pierce Speyrer</h2>
+                    <p className="text-brand-amber text-xl font-semibold">President of PS Premier Construction</p>
+                  </div>
+
+                  <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+                    <p>
+                      Pierce Speyrer is raising the bar in residential & commercial construction by bringing
+                      corporate-level strategy, consistent communication, and a client-first mindset to an industry
+                      that's overdue for disruption.
+                    </p>
+                    <p>
+                      Backed by seven years of consulting and sales expertise, and years of strong partnerships across
+                      Central Texas, Pierce leads PS Premier with one goal — to deliver a tailored turnkey solution for
+                      both residential and commercial construction projects all the way from land development to the
+                      punch list!
+                    </p>
+                  </div>
+
+                  <div className="pt-6">
+                    <AnimatedCTAButton href="/#contact">Work With Pierce</AnimatedCTAButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Achievement Badge & Reviews */}
+        <section className="w-full py-16 bg-gray-900 text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12 bounce-in visible">
+                <div className="inline-block bg-brand-amber/10 px-6 py-2 rounded-full mb-4 count-up">
+                  <span className="text-brand-amber font-bold text-lg">200+ Projects Completed</span>
+                </div>
+              </div>
+
+              <div className="mb-16 scale-in visible">
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 max-w-2xl mx-auto">
+                  <Star className="h-12 w-12 text-brand-amber mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-3 text-center">See What Our Neighbors Are Saying</h3>
+                  <p className="text-gray-300 mb-6 text-center">
+                    Check out our reviews and ratings from real Austin homeowners on Google.
+                  </p>
+                  <div className="text-center">
+                    <Link
+                      href="https://g.page/r/CZaWrbGUCHA0EAE/review"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-full font-medium transition-colors animate-pulse hover:animate-none"
+                    >
+                      <Star className="size-5" />
+                      View Our Google Reviews
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -30,11 +210,18 @@ export default function PortfolioPage() {
         {/* Projects Grid */}
         <section className="w-full py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6">Our Recent Projects</h2>
+              <p className="text-xl text-gray-300">
+                Explore our portfolio showcasing custom homes, renovations, and commercial projects across Austin.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <Card className="overflow-hidden bg-gray-900 border border-gray-800 card-hover-effect stagger-item visible">
                 <div className="relative aspect-video">
                   <OptimizedImage
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1491.png-sdKtvyMfFEFS9t0ThPI42kSxRGi52H.jpeg"
+                    src="/images/img-1491.jpeg"
                     alt="Commercial flat roof replacement and waterproofing project in Austin by PS Premier Construction"
                     fill
                     className="object-cover"
@@ -58,7 +245,7 @@ export default function PortfolioPage() {
               >
                 <div className="relative aspect-video">
                   <OptimizedImage
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-12-NFZkcor9738CQI559lujpl7N5izS6K.jpeg"
+                    src="/images/image-12.jpeg"
                     alt="Modern Austin living room renovation featuring contemporary design by PS Premier Construction"
                     fill
                     className="object-cover"
@@ -80,7 +267,7 @@ export default function PortfolioPage() {
               >
                 <div className="relative aspect-video">
                   <OptimizedImage
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0115.png-woinRbMi603fIfnimeOd53x8hbEyTg.jpeg"
+                    src="/images/img-0115.jpeg"
                     alt="Professional tile installation in Steiner Ranch by PS Premier Construction"
                     fill
                     className="object-cover"
@@ -103,7 +290,7 @@ export default function PortfolioPage() {
               >
                 <div className="relative aspect-video">
                   <OptimizedImage
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1489-uixeXZfwohHwb2G06PKzzC58L6tyw9.png"
+                    src="/images/img-1489.png"
                     alt="Professional exterior home renovation in Austin by PS Premier Construction"
                     fill
                     className="object-cover"
