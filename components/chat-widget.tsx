@@ -79,7 +79,7 @@ export function ChatWidget() {
         {
           role: "assistant",
           content:
-            "I'm having trouble connecting. Please call us at (512) 968-0169 or email info@pspremierconstruction.com",
+            "I'm having trouble connecting. Please call us at 512-798-0701 or email info@pspremierconstruction.com",
         },
       ])
     } finally {
@@ -123,7 +123,7 @@ export function ChatWidget() {
         ...prev,
         {
           role: "assistant",
-          content: "There was an issue submitting your info. Please call us directly at (512) 968-0169.",
+          content: "There was an issue submitting your info. Please call us directly at 512-798-0701.",
         },
       ])
     } finally {

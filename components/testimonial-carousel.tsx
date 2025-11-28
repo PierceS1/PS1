@@ -11,41 +11,82 @@ interface Testimonial {
   project: string
   quote: string
   rating: number
+  keyword: string
 }
 
 export function TestimonialCarousel() {
   const testimonials: Testimonial[] = [
     {
-      name: "Michael Rodriguez",
-      location: "Austin, TX",
-      project: "Whole-Home Luxury Remodel",
+      name: "Michael and Jennifer Thompson",
+      location: "West Lake Hills, TX",
+      project: "Kitchen Remodel",
       quote:
-        "PS Premier Construction transformed our outdated home into a modern masterpiece. Their attention to detail and commitment to quality exceeded our expectations.",
+        "We've lived in this house for 15 years and always dreamed of updating our kitchen. Pierce and his team made it happen without the stress we were expecting. They showed up every day on time, kept everything clean, and when we had questions, they actually picked up the phone. Our kitchen feels brand new, and honestly, we're cooking at home way more now because it's just so nice to be in there.",
       rating: 5,
+      keyword: "Kitchen Remodel",
     },
     {
-      name: "Jennifer Chang",
-      location: "Austin, TX",
-      project: "Kitchen & Bath Renovation",
+      name: "David Chen",
+      location: "Tarrytown, TX",
+      project: "Bathroom Renovation",
       quote:
-        "We couldn't be happier with our kitchen and bathroom renovation. The design team understood our vision perfectly, and the craftsmanship is impeccable.",
+        "My wife had been talking about redoing our master bathroom for years. I'll admit I was nervous about the whole process, but PS Premier made it easy. The shower alone is worth it - heated floors, rain head, the works. They finished in about three weeks, and yeah, it wasn't cheap, but you can tell they didn't cut any corners. Really happy we went with them.",
       rating: 5,
+      keyword: "Bathroom Renovation",
     },
     {
-      name: "David Wilson",
+      name: "Sarah Martinez",
+      location: "Barton Creek, TX",
+      project: "Home Addition",
+      quote:
+        "When baby number three was on the way, we knew we needed more space but didn't want to move. Pierce walked us through adding a second story, and I'm so glad we did it. The new master suite is incredible, and they managed to match the original house perfectly. My neighbors didn't even realize we'd done work until they came inside. That's attention to detail.",
+      rating: 5,
+      keyword: "Home Addition",
+    },
+    {
+      name: "Robert and Linda Hayes",
+      location: "Rollingwood, TX",
+      project: "Custom Home Build",
+      quote:
+        "Building a custom home was always our retirement dream. We interviewed five builders, and Pierce was the only one who really listened to what we wanted. He helped us find the perfect lot, worked with our architect, and kept us in the loop the whole time. It took about 11 months, but now we're living in our dream home. Worth every penny and every minute of the process.",
+      rating: 5,
+      keyword: "Custom Home",
+    },
+    {
+      name: "Amanda Rodriguez",
+      location: "Austin, TX",
+      project: "Whole Home Remodel",
+      quote:
+        "We bought a fixer-upper in '78704 and basically gutted the whole thing. New floors, new kitchen, new bathrooms, updated electrical - you name it. PS Premier coordinated everything, and surprisingly, it didn't feel as chaotic as I thought it would. They had different crews coming through for different things, but it all just worked. Four months later, our house went from dated to gorgeous. Friends keep asking who did the work.",
+      rating: 5,
+      keyword: "Whole Home Remodel",
+    },
+    {
+      name: "James Wilson",
       location: "Cedar Park, TX",
-      project: "Commercial Office Transformation",
+      project: "Outdoor Living Space",
       quote:
-        "Our office space was completely transformed by PS Premier Construction. The premium upgrades have impressed our clients and created a more productive environment.",
+        "We wanted a covered patio and outdoor kitchen for entertaining, and Pierce's team absolutely nailed it. They built this gorgeous cedar pergola, installed a built-in grill and fridge, added string lights, the whole nine yards. We've hosted three parties already this summer, and everyone wants to know who built it. Best investment we've made in our home, hands down.",
       rating: 5,
+      keyword: "Outdoor Kitchen",
     },
     {
-      name: "Sarah Johnson",
-      location: "Austin, TX",
-      project: "Short-Term Rental Luxe Package",
+      name: "Christine Park",
+      location: "Davenport Ranch, TX",
+      project: "Basement Finishing",
       quote:
-        "After PS Premier Construction renovated our Airbnb property, our bookings and revenue increased dramatically. The luxury finishes have earned us consistent 5-star reviews.",
+        "Our basement was just wasted space - concrete floors, exposed pipes, boxes everywhere. Now it's a full apartment with a bedroom, bathroom, and kitchenette for my mom. She moved in last month and loves having her own space while still being close to the grandkids. The team worked around our schedule and kept the dust contained. Really professional crew.",
       rating: 5,
+      keyword: "Basement Finish",
+    },
+    {
+      name: "Marcus Johnson",
+      location: "Austin, TX",
+      project: "Commercial Renovation",
+      quote:
+        "I own a small office building downtown, and the tenant spaces were looking pretty rough. PS Premier came in and completely modernized everything - new flooring, modern lighting, updated HVAC, fresh paint throughout. Took about six weeks, and we had new tenants signed within a month of finishing. The ROI on this project was better than I expected.",
+      rating: 5,
+      keyword: "Commercial Renovation",
     },
   ]
 

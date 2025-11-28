@@ -28,8 +28,8 @@ export default function NotFound() {
         <div className="pt-8 border-t border-border mt-8">
           <p className="text-sm text-muted-foreground mb-4">Need help? Contact us:</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <a href="tel:5129680169" className="text-brand-amber hover:underline">
-              (512) 968-0169
+            <a href="tel:5127980701" className="text-brand-amber hover:underline">
+              512-798-0701
             </a>
             <span className="hidden sm:inline text-muted-foreground">|</span>
             <a href="mailto:info@pspremierconstruction.com" className="text-brand-amber hover:underline">

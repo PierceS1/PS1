@@ -27,12 +27,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://pspremierconstruction.com/blog</loc>
-    <lastmod>2025-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   
   <!-- Services -->
   <url>
@@ -62,26 +56,6 @@
   <url>
     <loc>https://pspremierconstruction.com/services/land-development-austin</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://pspremierconstruction.com/blog/kitchen-remodeling-cost-guide-austin</loc>
-    <lastmod>2024-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://pspremierconstruction.com/blog/foundation-repair-signs-austin</loc>
-    <lastmod>2024-11-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://pspremierconstruction.com/blog/choosing-contractor-west-lake-hills</loc>
-    <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
