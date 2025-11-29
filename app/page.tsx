@@ -17,7 +17,6 @@ import {
   ClipboardCheck,
   Palette,
 } from "lucide-react"
-import { OptimizedImage } from "@/components/optimized-image"
 import { ImprovedHeader } from "@/components/improved-header"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import { StickyContactButton } from "@/components/sticky-contact-button"
@@ -517,105 +516,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Service Areas / Neighborhoods Section - REMOVED */}
-
-          {/* Projects Section with Animation */}
-          <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div
-                ref={projectsAnimation.ref}
-                className={`flex flex-col items-center justify-center space-y-4 text-center fade-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-              >
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Property Management Commercial All The Way To Simple HOA Repairs
-                  </h2>
-                  <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Every project tells a story. Here are a few of our favorites from around Austin.
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12">
-                <Card
-                  className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                >
-                  <div className="relative aspect-video">
-                    <OptimizedImage
-                      src="/images/img-1491.jpeg"
-                      alt="Commercial flat roof replacement and waterproofing project in Austin by PS Premier Construction"
-                      fill
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Commercial Roofing Project</h3>
-                    <p className="text-sm text-gray-300 line-clamp-3">
-                      Professional commercial flat roof replacement featuring advanced waterproofing membrane systems.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card
-                  className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                >
-                  <div className="relative aspect-video">
-                    <OptimizedImage
-                      src="/images/image-12.jpeg"
-                      alt="Modern Austin living room renovation featuring contemporary design by PS Premier Construction"
-                      fill
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Modern Austin Living Room</h3>
-                    <p className="text-sm text-gray-300 line-clamp-3">
-                      Contemporary living space transformation featuring floor-to-ceiling windows and modern fixtures.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card
-                  className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                >
-                  <div className="relative aspect-video">
-                    <OptimizedImage
-                      src="/images/img-0115.jpeg"
-                      alt="Professional tile installation in Steiner Ranch by PS Premier Construction"
-                      fill
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Steiner Ranch Tile Installation</h3>
-                    <p className="text-sm text-gray-300 line-clamp-3">
-                      Complete tile renovation featuring premium large-format porcelain tile installation.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card
-                  className={`overflow-hidden bg-gray-900 border border-gray-800 hover-lift scale-in ${projectsAnimation.isVisible ? "visible" : ""}`}
-                >
-                  <div className="relative aspect-video">
-                    <OptimizedImage
-                      src="/images/img-1489.png"
-                      alt="Professional exterior home renovation in Austin by PS Premier Construction"
-                      fill
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="text-lg font-bold text-white">Austin Exterior Renovation</h3>
-                    <p className="text-sm text-gray-300 line-clamp-3">
-                      Complete exterior renovation featuring professional gutter installation and fresh paint.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
           {/* Testimonials Section with Animation */}
           <section className="w-full py-12 md:py-16 bg-gray-950 text-white">
             <div ref={testimonialsAnimation.ref} className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -634,29 +534,6 @@ export default function HomePage() {
                 <TestimonialCarousel />
               </div>
               <div className="text-center mt-8"></div>
-            </div>
-          </section>
-
-          {/* Google Reviews Section */}
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6">What Our Neighbors Are Saying</h2>
-                <p className="text-lg text-gray-300 mb-8">
-                  See why Austin homeowners trust PS Premier Construction for their most important projects.
-                </p>
-                <div className="grid grid-cols-1 gap-4 max-w-xs mx-auto">
-                  <Link
-                    href="https://g.page/r/CZaWrbGUCHA0EAE/review"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full text-base font-medium transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white shadow-md animate-pulse hover:animate-none"
-                  >
-                    <Star className="size-5" />
-                    View Our Google Reviews
-                  </Link>
-                </div>
-              </div>
             </div>
           </section>
 
