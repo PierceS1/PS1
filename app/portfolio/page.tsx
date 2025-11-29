@@ -152,15 +152,13 @@ export default function PortfolioPage() {
 
                   <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
                     <p>
-                      Pierce Speyrer is raising the bar in residential & commercial construction by bringing
-                      corporate-level strategy, consistent communication, and a client-first mindset to an industry
-                      that's overdue for disruption.
+                      Pierce Speyrer sets a higher standard in residential and commercial construction. He applies
+                      corporate strategy, direct communication, and a client-first mindset to every project.
                     </p>
                     <p>
-                      Backed by seven years of consulting and sales expertise, and years of strong partnerships across
-                      Central Texas, Pierce leads PS Premier with one goal — to deliver a tailored turnkey solution for
-                      both residential and commercial construction projects all the way from land development to the
-                      punch list!
+                      He brings seven years of consulting and sales experience. He has built reliable partnerships
+                      across Central Texas. He leads PS Premier with one focus. Deliver a tailored turnkey solution from
+                      the first phase of land development to the final punch list.
                     </p>
                   </div>
 

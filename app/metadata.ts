@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "PS Premier Construction - Austin's Premier Construction Company",
+  title: "PS Premier Construction - Luxury Remodels & Residential Development in Austin",
   description:
-    "Quality construction and remodeling services for residential and commercial projects in Austin, Texas. Specializing in luxury remodels, kitchen & bath renovations, and commercial transformations.",
+    "Specialist in luxury kitchen & bathroom remodels, full-home renovations, and custom home builds in Austin. Serving West Lake Hills, Tarrytown, Barton Creek, and Central Austin with high-end residential construction.",
   keywords:
-    "construction, remodeling, Austin, Texas, luxury remodels, kitchen renovation, bathroom renovation, commercial construction, residential construction, home renovation",
+    "luxury remodeling Austin, custom home builder Austin, high-end kitchen remodel, luxury bathroom renovation, residential development Austin, West Lake Hills construction, Tarrytown remodeling, Barton Creek custom homes, Austin home renovation",
   authors: [{ name: "PS Premier Construction" }],
   creator: "PS Premier Construction",
   publisher: "PS Premier Construction",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "PS Premier Construction - Austin's Premier Construction Company",
+    title: "PS Premier Construction - Luxury Remodels & Residential Development in Austin",
     description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
+      "Specialist in luxury remodels and residential development. Serving Austin's premium neighborhoods with high-end construction services.",
     url: "https://pspremierconstruction.com",
     siteName: "PS Premier Construction",
     locale: "en_US",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PS Premier Construction - Austin's Premier Construction Company",
+    title: "PS Premier Construction - Luxury Remodels & Residential Development in Austin",
     description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
+      "Specialist in luxury remodels and residential development. Serving Austin's premium neighborhoods with high-end construction services.",
   },
   robots: {
     index: true,

@@ -28,6 +28,7 @@ import { useEffect, useState } from "react"
 import { SchemaMarkup } from "@/app/components/schema-markup"
 import { FAQSchema } from "@/app/components/faq-schema"
 import { BreadcrumbSchema } from "@/app/components/breadcrumb-schema"
+import { NeighborhoodsCarousel } from "@/components/neighborhoods-carousel"
 
 export default function HomePage() {
   // Animation hooks
@@ -90,20 +91,19 @@ export default function HomePage() {
               >
                 <div className={`space-y-6 fade-in ${heroAnimation.isVisible ? "visible" : ""}`}>
                   <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-                    Luxury Remodeling and Custom Builds in Austin
+                    Luxury Remodels and Residential Development in Austin
                   </h1>
                   <p className="max-w-[700px] mx-auto text-gray-100 text-lg md:text-xl drop-shadow-md">
-                    Serving West Lake, Tarrytown, Barton Creek, and Central Austin with premium construction services.
-                    Transform your home or business with Austin's trusted construction partner.
+                    Serving West Lake Hills, Tarrytown, Barton Creek, and Central Austin with premium residential
+                    construction services. Clear execution. Clean communication. Your trusted construction partner.
                   </p>
-                  {/* CHANGE: Updated padding and sizing to match AnimatedCTAButton dimensions */}
                   <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center pt-4">
                     <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
                     <Link
                       href="#neighborhoods"
                       className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white animate-pulse hover:animate-none"
                     >
-                      Learn About Us
+                      View Our Work
                     </Link>
                   </div>
                 </div>
@@ -111,47 +111,172 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* About Section Removed - Now on /about page */}
-          {/* Process Section Removed - Now on /process page */}
-          {/* Materials Section Removed - Now on /process page */}
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6 text-gray-900">
+                  Your Specialist for High-End Residential Projects
+                </h2>
+                <p className="text-xl text-gray-700 mb-4">
+                  PS Premier Construction focuses on luxury remodels and residential development in Austin.
+                </p>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  You get clarity, clean execution, and a partner who handles design coordination, budgeting, scopes,
+                  and project management from start to finish.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="w-full bg-gray-950">
+            <div className="text-center py-8 md:py-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Austin's Premier Neighborhoods</h2>
+              <p className="text-gray-300 text-lg">Explore our luxury projects across Central Texas</p>
+            </div>
+            <NeighborhoodsCarousel />
+          </section>
 
           <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div ref={aboutAnimation.ref} className={`fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}>
-                {/* Section 1: Positioning */}
                 <div className="max-w-4xl mx-auto mb-16">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6 text-center">
-                    Your Vision, Our Expertise
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6 text-center">Primary Services</h2>
+                  <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                    We specialize in high-end residential projects that transform how you live and increase property
+                    value.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Palette className="h-10 w-10 text-brand-amber mb-4" />
+                        <h3 className="text-xl font-bold text-white mb-3">Luxury Kitchen & Bathroom Remodels</h3>
+                        <p className="text-gray-300">
+                          Transform your most important spaces with custom cabinetry, premium finishes, and thoughtful
+                          layouts that elevate your daily life.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Home className="h-10 w-10 text-brand-amber mb-4" />
+                        <h3 className="text-xl font-bold text-white mb-3">Full-Home Renovations</h3>
+                        <p className="text-gray-300">
+                          Comprehensive whole-home transformations that modernize every space while maintaining
+                          architectural integrity and style.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Building className="h-10 w-10 text-brand-amber mb-4" />
+                        <h3 className="text-xl font-bold text-white mb-3">Custom Home Builds</h3>
+                        <p className="text-gray-300">
+                          Build your dream home from the ground up with personalized design, quality materials, and
+                          expert craftsmanship throughout.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <MapPin className="h-10 w-10 text-brand-amber mb-4" />
+                        <h3 className="text-xl font-bold text-white mb-3">Residential Land Development Support</h3>
+                        <p className="text-gray-300">
+                          From site planning to permitting and infrastructure, we guide your residential development
+                          projects to completion.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="max-w-4xl mx-auto mb-16 border-t border-gray-800 pt-16">
+                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-6 text-center">
+                    Additional Services When Needed
                   </h2>
-                  <div className="space-y-4 text-gray-300 text-lg">
-                    <p>
-                      You want a remodel that increases value and improves how you live. You need a builder who listens,
-                      plans, and delivers without delays and excuses.
-                    </p>
-                    <p className="font-semibold text-white">
-                      PS Premier Construction leads your project from first walk-through to final punch list.
-                    </p>
-                    <div className="mt-6">
-                      <h3 className="text-xl font-bold text-white mb-4">We manage:</h3>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-1" />
-                          <span>Design coordination</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-1" />
-                          <span>Material selections</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-1" />
-                          <span>Scheduling and trades</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-1" />
-                          <span>Budget control</span>
-                        </li>
-                      </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Tenant Improvements</h4>
+                        <p className="text-sm text-gray-400">Commercial build-outs and property upgrades</p>
+                      </div>
                     </div>
+                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Property Management Repairs</h4>
+                        <p className="text-sm text-gray-400">Turnkey solutions for rental properties</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Scope Writing & Oversight</h4>
+                        <p className="text-sm text-gray-400">Project management and documentation</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">Contractor Consulting</h4>
+                        <p className="text-sm text-gray-400">Sales, CRM, and operations support</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="max-w-4xl mx-auto mb-16">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8 text-center">
+                    Why Clients Work With Us
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Calendar className="h-8 w-8 text-brand-amber mb-3" />
+                        <h3 className="text-xl font-bold text-white mb-2">Clear Communication</h3>
+                        <p className="text-gray-300">
+                          Weekly updates keep you informed. No surprises, no guessing. You always know what's happening
+                          and what's next.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Wrench className="h-8 w-8 text-brand-amber mb-3" />
+                        <h3 className="text-xl font-bold text-white mb-2">Fast Coordination</h3>
+                        <p className="text-gray-300">
+                          Quick responses with vendors and designers. We keep your project moving without delays or
+                          bottlenecks.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <ClipboardCheck className="h-8 w-8 text-brand-amber mb-3" />
+                        <h3 className="text-xl font-bold text-white mb-2">Accurate Scopes & Timelines</h3>
+                        <p className="text-gray-300">
+                          Predictable schedules based on real experience. Clear pricing and change order control so you
+                          know what you're paying for.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-gray-800 border-gray-700">
+                      <CardContent className="p-6">
+                        <Star className="h-8 w-8 text-brand-amber mb-3" />
+                        <h3 className="text-xl font-bold text-white mb-2">Strong Systems & Tracking</h3>
+                        <p className="text-gray-300">
+                          Experience across residential, commercial, and development projects with proven systems for
+                          updates and job tracking.
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
 
@@ -392,307 +517,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div ref={materialsAnimation.ref} className={`fade-in ${materialsAnimation.isVisible ? "visible" : ""}`}>
-                <div className="max-w-4xl mx-auto">
-                  <div className="flex items-center justify-center gap-3 mb-8">
-                    <Palette className="h-10 w-10 text-brand-amber" />
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">
-                      Materials and Standards
-                    </h2>
-                  </div>
-                  <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-                    We only use premium materials from trusted suppliers. Your investment deserves quality that lasts.
-                  </p>
-
-                  <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
-                    <h3 className="text-2xl font-bold text-white mb-6 text-center">We source:</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Custom Cabinets</h4>
-                          <p className="text-gray-300 text-sm">
-                            Premium semi-custom lines tailored to your space and style
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Natural Stone & Quartz</h4>
-                          <p className="text-gray-300 text-sm">
-                            Durable, beautiful countertops that stand the test of time
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">High-End Tile</h4>
-                          <p className="text-gray-300 text-sm">
-                            Local suppliers with extensive selections for every design aesthetic
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">LED Lighting Packages</h4>
-                          <p className="text-gray-300 text-sm">
-                            Energy-efficient, modern lighting solutions for every room
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">High-Efficiency Plumbing</h4>
-                          <p className="text-gray-300 text-sm">
-                            Quality fixtures that save water without sacrificing performance
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Premium Paint Systems</h4>
-                          <p className="text-gray-300 text-sm">
-                            Sherwin Williams and Benjamin Moore for lasting beauty
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 p-6 bg-gray-900 border border-gray-700 rounded-lg">
-                      <p className="text-gray-300 text-center">
-                        <span className="font-semibold text-white">Quality Guarantee:</span> Every material we install
-                        meets or exceeds manufacturer specifications and industry standards. We stand behind our work.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-12 text-center">
-                    <AnimatedCTAButton href="#contact">Discuss Your Material Options</AnimatedCTAButton>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Services Section with Animation */}
-          <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div
-                ref={servicesAnimation.ref}
-                className={`flex flex-col items-center justify-center space-y-4 text-center fade-in ${servicesAnimation.isVisible ? "visible" : ""}`}
-              >
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
-                  <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    From kitchen remodels to custom builds, we've got you covered. Here's what we love to do for our
-                    Austin neighbors.
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
-                {/* Service Cards with Staggered Animation */}
-                <Link href="/services/kitchen-remodeling-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(0) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <Home className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Kitchen Remodeling</h3>
-                      <p className="text-gray-300">
-                        Transform your kitchen with custom cabinetry, modern appliances, and beautiful finishes that
-                        make cooking a joy.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/services/bathroom-remodeling-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(1) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <Building className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Bathroom Remodeling</h3>
-                      <p className="text-gray-300">
-                        Create your dream bathroom with luxury fixtures, custom tile work, and spa-like amenities.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/services/home-additions-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(2) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <Home className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Home Additions</h3>
-                      <p className="text-gray-300">
-                        Expand your living space with seamless additions that blend perfectly with your home's existing
-                        architecture.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/services/custom-home-builder-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(3) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <Building className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Custom Home Builder</h3>
-                      <p className="text-gray-300">
-                        Build your dream home from the ground up with personalized design and quality craftsmanship.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/services/land-development-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(4) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <MapPin className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Land Development</h3>
-                      <p className="text-gray-300">
-                        From raw land to finished communities, we handle permitting, infrastructure, and construction.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/services/tenant-improvement-austin">
-                  <Card
-                    className={`bg-gray-900 border border-gray-800 text-white hover-lift stagger-item ${visibleItems.includes(5) ? "visible" : ""} cursor-pointer transition-all hover:border-brand-amber`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white mb-4">
-                        <Wrench className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Tenant Improvement</h3>
-                      <p className="text-gray-300">
-                        Turnkey construction solutions for property managers and owners, from build-outs to renovations.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* Service Areas / Neighborhoods Section with GBP Link */}
-          <section id="neighborhoods" className="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Serving Austin's Premier Neighborhoods
-                  </h2>
-                  <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed">
-                    Click on each neighborhood to see more projects
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <Link href="/locations/west-lake-hills">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">West Lake Hills</h3>
-                      <p className="text-gray-300 text-sm">
-                        Luxury remodeling and custom builds in one of Austin's most prestigious communities.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/locations/tarrytown">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">Tarrytown</h3>
-                      <p className="text-gray-300 text-sm">
-                        Historic home renovations and modern updates that preserve neighborhood character.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/locations/barton-creek">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">Barton Creek</h3>
-                      <p className="text-gray-300 text-sm">
-                        Estate-level construction services for Barton Creek's luxury properties.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/locations/davenport-ranch">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">Davenport Ranch</h3>
-                      <p className="text-gray-300 text-sm">
-                        Custom home building and remodeling in this premier northwest Austin neighborhood.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/locations/rollingwood">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">Rollingwood</h3>
-                      <p className="text-gray-300 text-sm">
-                        High-end renovations and additions for this exclusive lakeside community.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-
-                <Link href="/locations/cedar-park">
-                  <Card className="bg-gray-900 border border-gray-800 text-white hover-lift cursor-pointer transition-all hover:border-brand-amber">
-                    <CardContent className="p-6">
-                      <MapPin className="h-8 w-8 text-brand-amber mb-3" />
-                      <h3 className="text-xl font-bold mb-2">Cedar Park</h3>
-                      <p className="text-gray-300 text-sm">
-                        Growing families trust us for home additions and comprehensive remodels.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </div>
-            </div>
-          </section>
+          {/* Service Areas / Neighborhoods Section - REMOVED */}
 
           {/* Projects Section with Animation */}
           <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
@@ -809,6 +634,29 @@ export default function HomePage() {
                 <TestimonialCarousel />
               </div>
               <div className="text-center mt-8"></div>
+            </div>
+          </section>
+
+          {/* Google Reviews Section */}
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6">What Our Neighbors Are Saying</h2>
+                <p className="text-lg text-gray-300 mb-8">
+                  See why Austin homeowners trust PS Premier Construction for their most important projects.
+                </p>
+                <div className="grid grid-cols-1 gap-4 max-w-xs mx-auto">
+                  <Link
+                    href="https://g.page/r/CZaWrbGUCHA0EAE/review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full text-base font-medium transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white shadow-md animate-pulse hover:animate-none"
+                  >
+                    <Star className="size-5" />
+                    View Our Google Reviews
+                  </Link>
+                </div>
+              </div>
             </div>
           </section>
 

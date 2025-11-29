@@ -9,7 +9,7 @@ export function SchemaMarkup() {
     image: "https://pspremierconstruction.com/images/ps-premier-logo-gold.png",
     logo: "https://pspremierconstruction.com/images/ps-premier-logo-gold.png",
     description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas. Specializing in luxury remodels, kitchen & bath renovations, custom home building, and commercial construction.",
+      "Specialist in luxury remodels and residential development in Austin, Texas. Focusing on high-end kitchen & bathroom renovations, full-home remodels, custom home builds, and residential land development.",
     url: "https://pspremierconstruction.com",
     telephone: "+1-512-798-0701",
     email: "ps@pspremierconstruction.com",
@@ -18,7 +18,7 @@ export function SchemaMarkup() {
       name: "Pierce Speyrer",
       jobTitle: "President",
       description:
-        "Pierce Speyrer is raising the bar in residential & commercial construction by bringing corporate-level strategy, consistent communication, and a client-first mindset to the industry.",
+        "Pierce Speyrer leads PS Premier Construction with corporate-level strategy and client-first approach, specializing in high-end residential projects across Austin.",
     },
     address: {
       "@type": "PostalAddress",
@@ -95,26 +95,27 @@ export function SchemaMarkup() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Kitchen Remodeling",
+            name: "Luxury Kitchen Remodeling",
             description:
-              "Transform your kitchen with custom cabinetry, modern appliances, and beautiful finishes that make cooking a joy.",
+              "High-end kitchen transformations with custom cabinetry, premium appliances, and designer finishes for Austin's finest homes.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Bathroom Remodeling",
-            description: "Create your dream bathroom with luxury fixtures, custom tile work, and spa-like amenities.",
+            name: "Luxury Bathroom Remodeling",
+            description:
+              "Spa-like bathroom renovations with luxury fixtures, custom tile work, and sophisticated design for upscale Austin residences.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Home Additions",
+            name: "Full-Home Renovations",
             description:
-              "Expand your living space with seamless additions that blend perfectly with your home's existing architecture.",
+              "Complete residential transformations that modernize and elevate entire homes in West Lake Hills, Tarrytown, and Barton Creek.",
           },
         },
         {
@@ -122,16 +123,17 @@ export function SchemaMarkup() {
           itemOffered: {
             "@type": "Service",
             name: "Custom Home Building",
-            description: "Build your dream home from the ground up with personalized design and quality craftsmanship.",
+            description:
+              "Build your dream luxury home from the ground up with personalized design and quality craftsmanship in Austin's premium neighborhoods.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Land Development",
+            name: "Residential Land Development",
             description:
-              "From raw land to finished communities, we handle permitting, infrastructure, and construction.",
+              "Comprehensive residential development support from site planning to permitting and infrastructure for Austin properties.",
           },
         },
         {
@@ -139,16 +141,7 @@ export function SchemaMarkup() {
           itemOffered: {
             "@type": "Service",
             name: "Tenant Improvement",
-            description:
-              "Turnkey construction solutions for property managers and owners, from build-outs to renovations.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Commercial Roofing",
-            description: "Professional commercial flat roof replacement and waterproofing services.",
+            description: "Commercial build-outs and property upgrades for landlords and property managers.",
           },
         },
       ],
