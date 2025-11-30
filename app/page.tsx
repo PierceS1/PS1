@@ -28,6 +28,7 @@ import { SchemaMarkup } from "@/app/components/schema-markup"
 import { FAQSchema } from "@/app/components/faq-schema"
 import { BreadcrumbSchema } from "@/app/components/breadcrumb-schema"
 import { NeighborhoodsCarousel } from "@/components/neighborhoods-carousel"
+import { FeaturedProjectsTabs } from "@/components/featured-projects-tabs"
 
 export default function HomePage() {
   // Animation hooks
@@ -135,55 +136,57 @@ export default function HomePage() {
             <NeighborhoodsCarousel />
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
+          <FeaturedProjectsTabs />
+
+          <section className="w-full py-12 md:py-20 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div ref={aboutAnimation.ref} className={`fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}>
                 <div className="max-w-4xl mx-auto mb-16">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6 text-center">Primary Services</h2>
-                  <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                  <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
                     We specialize in high-end residential projects that transform how you live and increase property
                     value.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Palette className="h-10 w-10 text-brand-amber mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-3">Luxury Kitchen & Bathroom Remodels</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">Luxury Kitchen & Bathroom Remodels</h3>
+                        <p className="text-gray-600">
                           Transform your most important spaces with custom cabinetry, premium finishes, and thoughtful
                           layouts that elevate your daily life.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Home className="h-10 w-10 text-brand-amber mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-3">Full-Home Renovations</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Home Renovations</h3>
+                        <p className="text-gray-600">
                           Comprehensive whole-home transformations that modernize every space while maintaining
                           architectural integrity and style.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Building className="h-10 w-10 text-brand-amber mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-3">Custom Home Builds</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">Custom Home Builds</h3>
+                        <p className="text-gray-600">
                           Build your dream home from the ground up with personalized design, quality materials, and
                           expert craftsmanship throughout.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <MapPin className="h-10 w-10 text-brand-amber mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-3">Residential Land Development Support</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">Residential Land Development Support</h3>
+                        <p className="text-gray-600">
                           From site planning to permitting and infrastructure, we guide your residential development
                           projects to completion.
                         </p>
@@ -192,37 +195,37 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="max-w-4xl mx-auto mb-16 border-t border-gray-800 pt-16">
+                <div className="max-w-4xl mx-auto mb-16 border-t border-gray-200 pt-16">
                   <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-6 text-center">
                     Additional Services When Needed
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex items-start gap-3 p-4 bg-gray-100 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Tenant Improvements</h4>
-                        <p className="text-sm text-gray-400">Commercial build-outs and property upgrades</p>
+                        <h4 className="font-semibold text-gray-900 mb-1">Tenant Improvements</h4>
+                        <p className="text-sm text-gray-600">Commercial build-outs and property upgrades</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex items-start gap-3 p-4 bg-gray-100 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Property Management Repairs</h4>
-                        <p className="text-sm text-gray-400">Turnkey solutions for rental properties</p>
+                        <h4 className="font-semibold text-gray-900 mb-1">Property Management Repairs</h4>
+                        <p className="text-sm text-gray-600">Turnkey solutions for rental properties</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex items-start gap-3 p-4 bg-gray-100 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Scope Writing & Oversight</h4>
-                        <p className="text-sm text-gray-400">Project management and documentation</p>
+                        <h4 className="font-semibold text-gray-900 mb-1">Scope Writing & Oversight</h4>
+                        <p className="text-sm text-gray-600">Project management and documentation</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex items-start gap-3 p-4 bg-gray-100 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-brand-amber flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-white mb-1">Contractor Consulting</h4>
-                        <p className="text-sm text-gray-400">Sales, CRM, and operations support</p>
+                        <h4 className="font-semibold text-gray-900 mb-1">Contractor Consulting</h4>
+                        <p className="text-sm text-gray-600">Sales, CRM, and operations support</p>
                       </div>
                     </div>
                   </div>
@@ -233,44 +236,44 @@ export default function HomePage() {
                     Why Clients Work With Us
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Calendar className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Clear Communication</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Clear Communication</h3>
+                        <p className="text-gray-600">
                           Weekly updates keep you informed. No surprises, no guessing. You always know what's happening
                           and what's next.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Wrench className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Fast Coordination</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Fast Coordination</h3>
+                        <p className="text-gray-600">
                           Quick responses with vendors and designers. We keep your project moving without delays or
                           bottlenecks.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <ClipboardCheck className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Accurate Scopes & Timelines</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Accurate Scopes & Timelines</h3>
+                        <p className="text-gray-600">
                           Predictable schedules based on real experience. Clear pricing and change order control so you
                           know what you're paying for.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Star className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Strong Systems & Tracking</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Strong Systems & Tracking</h3>
+                        <p className="text-gray-600">
                           Experience across residential, commercial, and development projects with proven systems for
                           updates and job tracking.
                         </p>
@@ -283,42 +286,42 @@ export default function HomePage() {
                 <div className="max-w-4xl mx-auto mb-16">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8 text-center">What You Get</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <CheckCircle className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Clean and Organized Job Sites</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Clean and Organized Job Sites</h3>
+                        <p className="text-gray-600">
                           Your property is treated with respect. We maintain clean work areas and protect your home
                           throughout construction.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Calendar className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Clear Communication</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Clear Communication</h3>
+                        <p className="text-gray-600">
                           Weekly updates keep you informed. No surprises, no guessing. You always know what's happening.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <Star className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Quality-Focused Trades</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Quality-Focused Trades</h3>
+                        <p className="text-gray-600">
                           No low-bid crews. We work with skilled professionals who take pride in their craftsmanship.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-800 border-gray-700">
+                    <Card className="bg-white border-gray-200">
                       <CardContent className="p-6">
                         <DollarSign className="h-8 w-8 text-brand-amber mb-3" />
-                        <h3 className="text-xl font-bold text-white mb-2">Transparent Pricing</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Transparent Pricing</h3>
+                        <p className="text-gray-600">
                           Clear pricing and change order control. You know what you're paying for and why.
                         </p>
                       </CardContent>
@@ -334,10 +337,10 @@ export default function HomePage() {
                   </div>
 
                   <div className="mb-16">
-                    <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 max-w-2xl mx-auto">
+                    <div className="bg-white border border-gray-200 rounded-lg p-8 max-w-2xl mx-auto">
                       <Star className="h-12 w-12 text-brand-amber mx-auto mb-4" />
                       <h3 className="text-2xl font-bold mb-3 text-center">See What Our Neighbors Are Saying</h3>
-                      <p className="text-gray-300 mb-6 text-center">
+                      <p className="text-gray-600 mb-6 text-center">
                         Check out our reviews and ratings from real Austin homeowners on Google.
                       </p>
                       <div className="text-center">
@@ -374,7 +377,7 @@ export default function HomePage() {
                         <p className="text-brand-amber text-xl font-semibold">President of PS Premier Construction</p>
                       </div>
 
-                      <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+                      <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                         <p>
                           Pierce Speyrer is raising the bar in residential & commercial construction by bringing
                           corporate-level strategy, consistent communication, and a client-first mindset to an industry
@@ -398,7 +401,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-950 text-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div ref={processAnimation.ref} className={`fade-in ${processAnimation.isVisible ? "visible" : ""}`}>
                 <div className="max-w-4xl mx-auto">
@@ -412,7 +415,7 @@ export default function HomePage() {
                   </p>
 
                   <div className="space-y-6">
-                    <Card className="bg-gray-900 border-gray-800">
+                    <Card className="bg-gray-800 border-gray-700">
                       <CardContent className="p-6">
                         <div className="flex gap-4">
                           <div className="flex-shrink-0">
@@ -431,7 +434,7 @@ export default function HomePage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-900 border-gray-800">
+                    <Card className="bg-gray-800 border-gray-700">
                       <CardContent className="p-6">
                         <div className="flex gap-4">
                           <div className="flex-shrink-0">
@@ -450,7 +453,7 @@ export default function HomePage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-900 border-gray-800">
+                    <Card className="bg-gray-800 border-gray-700">
                       <CardContent className="p-6">
                         <div className="flex gap-4">
                           <div className="flex-shrink-0">
@@ -469,7 +472,7 @@ export default function HomePage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-900 border-gray-800">
+                    <Card className="bg-gray-800 border-gray-700">
                       <CardContent className="p-6">
                         <div className="flex gap-4">
                           <div className="flex-shrink-0">
@@ -488,7 +491,7 @@ export default function HomePage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gray-900 border-gray-800">
+                    <Card className="bg-gray-800 border-gray-700">
                       <CardContent className="p-6">
                         <div className="flex gap-4">
                           <div className="flex-shrink-0">
