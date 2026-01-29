@@ -73,31 +73,31 @@ In the v0 **Vars** section, add:
 Visit: `https://yoursite.com/api/hubspot/verify`
 
 Expected response:
-\`\`\`json
+```json
 {
   "status": "success",
   "method": "private_app",
   "portalId": 12345678,
   "accountType": "PAID"
 }
-\`\`\`
+```
 
 ---
 
 ## Testing Your Setup
 
 ### Test Forms API
-\`\`\`bash
+```bash
 curl --request GET \
   --url https://yoursite.com/api/hubspot/verify
-\`\`\`
+```
 
 ### Test Private App Token
-\`\`\`bash
+```bash
 curl --request GET \
   --url https://api.hubapi.com/integrations/v1/me \
   --header 'Authorization: Bearer YOUR_TOKEN_HERE'
-\`\`\`
+```
 
 ### Test Form Submission
 1. Go to your website

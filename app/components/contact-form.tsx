@@ -1,56 +1,33 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    message: "",
-  })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
     try {
-      const response = await fetch("/api/hubspot", {
+      const response = await fetch("https://formspree.io/f/mblgdavn", {
         method: "POST",
+        body: formData,
         headers: {
-          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          source: "Website Contact Form",
-        }),
       })
 
       if (response.ok) {
         setSubmitStatus("success")
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          projectType: "",
-          message: "",
-        })
+        form.reset()
       } else {
         setSubmitStatus("error")
       }
@@ -63,97 +40,69 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 bg-gray-900 p-6 rounded-lg border border-gray-800">
+      <input type="hidden" name="_subject" value="New Project Inquiry - PS Premier Construction" />
+
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label
-            htmlFor="firstName"
-            className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
+          <label htmlFor="firstName" className="text-sm font-medium leading-none text-white">
             First name
           </label>
           <input
             id="firstName"
             name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             placeholder="John"
             required
-            aria-required="true"
           />
         </div>
         <div className="space-y-2">
-          <label
-            htmlFor="lastName"
-            className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
+          <label htmlFor="lastName" className="text-sm font-medium leading-none text-white">
             Last name
           </label>
           <input
             id="lastName"
             name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             placeholder="Smith"
             required
-            aria-required="true"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <label
-          htmlFor="email"
-          className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
+        <label htmlFor="email" className="text-sm font-medium leading-none text-white">
           Email
         </label>
         <input
           id="email"
-          name="email"
+          name="_replyto"
           type="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
           placeholder="john.smith@example.com"
           required
-          aria-required="true"
         />
       </div>
       <div className="space-y-2">
-        <label
-          htmlFor="phone"
-          className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
+        <label htmlFor="phone" className="text-sm font-medium leading-none text-white">
           Phone
         </label>
         <input
           id="phone"
           name="phone"
           type="tel"
-          value={formData.phone}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
           placeholder="(555) 123-4567"
           required
-          aria-required="true"
         />
       </div>
       <div className="space-y-2">
-        <label
-          htmlFor="projectType"
-          className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
+        <label htmlFor="projectType" className="text-sm font-medium leading-none text-white">
           Project Type
         </label>
         <select
           id="projectType"
           name="projectType"
-          value={formData.projectType}
-          onChange={handleChange}
-          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex h-10 w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
           required
-          aria-required="true"
         >
           <option value="">Select project type</option>
           <option value="Whole-Home Luxury Remodel">Whole-Home Luxury Remodel</option>
@@ -165,21 +114,15 @@ export function ContactForm() {
         </select>
       </div>
       <div className="space-y-2">
-        <label
-          htmlFor="message"
-          className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
+        <label htmlFor="message" className="text-sm font-medium leading-none text-white">
           Project Details
         </label>
         <textarea
           id="message"
           name="message"
-          value={formData.message}
-          onChange={handleChange}
-          className="flex min-h-[120px] w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex min-h-[120px] w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
           placeholder="Tell us about your project..."
           required
-          aria-required="true"
         />
       </div>
 
@@ -198,27 +141,17 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-10 px-4 py-2 rounded-md bg-brand-red text-white font-medium hover:bg-brand-red-dark focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 animate-pulse hover:animate-none disabled:opacity-50"
-        aria-label="Submit contact form"
+        className="w-full h-10 px-4 py-2 rounded-md bg-brand-red text-white font-medium hover:bg-brand-red-dark focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting..." : "Submit Request"}
+        {isSubmitting ? "Submitting..." : "Request Consultation"}
       </Button>
 
-      <div className="text-center">
-        <p className="text-sm text-gray-400 mb-2">Or schedule a meeting directly:</p>
-        <Button
-          type="button"
-          className="w-full bg-brand-red text-white hover:bg-brand-red-dark animate-pulse hover:animate-none"
-          onClick={() =>
-            window.open(
-              process.env.NEXT_PUBLIC_HUBSPOT_MEETING_LINK || "https://meetings.hubspot.com/your-link",
-              "_blank",
-            )
-          }
-        >
-          Schedule a Consultation
-        </Button>
-      </div>
+      <p className="text-center text-sm text-gray-400">
+        Or call us directly at{" "}
+        <a href="tel:512-798-0701" className="text-brand-amber hover:underline">
+          512-798-0701
+        </a>
+      </p>
     </form>
   )
 }

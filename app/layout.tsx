@@ -3,13 +3,27 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { ChatWidget } from "@/components/chat-widget"
 import Script from "next/script"
+import { Cormorant_Garamond, Inter } from "next/font/google"
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "PS Premier Construction - Austin's Premier Construction Company",
+  title: "PS Premier Construction - Luxury Remodeling & Custom Builds in Austin",
   description:
-    "Quality construction and remodeling services for residential and commercial projects in Austin, Texas. Specializing in luxury remodels, kitchen & bath renovations, and commercial transformations.",
+    "Luxury residential remodeling and custom home building in Austin's premier neighborhoods. Specializing in West Lake Hills, Tarrytown, and Barton Creek. From kitchen and bath renovations to full-home transformations.",
   keywords:
-    "construction, remodeling, Austin, Texas, luxury remodels, kitchen renovation, bathroom renovation, commercial construction, residential construction, home renovation",
+    "luxury remodeling Austin, custom home builder Austin, West Lake Hills contractor, Tarrytown renovation, Barton Creek construction, high-end kitchen remodel, luxury bathroom renovation, residential development Austin",
   authors: [{ name: "PS Premier Construction" }],
   creator: "PS Premier Construction",
   publisher: "PS Premier Construction",
@@ -27,9 +41,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png" }],
   },
   openGraph: {
-    title: "PS Premier Construction - Austin's Premier Construction Company",
-    description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
+    title: "PS Premier Construction - Luxury Remodeling & Custom Builds in Austin",
+    description: "Luxury residential remodeling and custom home building in Austin's premier neighborhoods.",
     url: "https://pspremierconstruction.com",
     siteName: "PS Premier Construction",
     locale: "en_US",
@@ -45,9 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PS Premier Construction - Austin's Premier Construction Company",
-    description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
+    title: "PS Premier Construction - Luxury Remodeling & Custom Builds in Austin",
+    description: "Luxury residential remodeling and custom home building in Austin's premier neighborhoods.",
     images: ["/images/ps-premier-logo-gold.png"],
   },
   robots: {
@@ -64,13 +76,19 @@ export const metadata: Metadata = {
     generator: 'v0.app'
 }
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${inter.variable} bg-background`}>
       <head>
         <Script id="tealium-utag-data" strategy="beforeInteractive">
           {`var utag_data = {};`}

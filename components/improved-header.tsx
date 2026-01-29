@@ -11,10 +11,9 @@ export function ImprovedHeader() {
 
   const navLinks = [
     { href: "/", label: "Home", id: "home" },
-    { href: "/process", label: "Process", id: "process" },
     { href: "/#services", label: "Services", id: "services" },
     { href: "/portfolio", label: "Portfolio", id: "portfolio" },
-    { href: "/testimonials", label: "Testimonials", id: "testimonials" },
+    { href: "/process", label: "Process", id: "process" },
   ]
 
   useEffect(() => {
@@ -72,15 +71,11 @@ export function ImprovedHeader() {
                   key={link.id}
                   href={link.href}
                   className={`relative px-4 py-2 text-[15px] font-medium tracking-tight transition-all duration-200
-                ${
-                  currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")
-                    ? "text-white"
-                    : "text-white/80 hover:text-white"
-                }
+                ${currentSection === link.id ? "text-white" : "text-white/80 hover:text-white"}
               `}
                 >
                   {link.label}
-                  {(currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")) && (
+                  {currentSection === link.id && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></span>
                   )}
                 </Link>
@@ -92,7 +87,7 @@ export function ImprovedHeader() {
               className="ml-6 flex items-center gap-2 px-5 py-2.5 rounded-md text-[15px] font-semibold transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white shadow-sm hover:shadow-md"
             >
               <Phone className="size-4" />
-              <span>Get a Quote</span>
+              <span>Request a Consultation</span>
             </Link>
           </div>
 

@@ -10,17 +10,39 @@ export async function POST(request: Request) {
     const body = await request.json()
     const { firstName, lastName, email, phone, projectType, message, source } = body
 
+    console.log("[v0] HubSpot API called with:", { firstName, lastName, email, phone, projectType })
+    console.log("[v0] Environment check:", {
+      hasToken: !!HUBSPOT_ACCESS_TOKEN && HUBSPOT_ACCESS_TOKEN.length > 0,
+      hasPortalId: !!HUBSPOT_PORTAL_ID,
+      hasFormId: !!HUBSPOT_FORM_ID,
+    })
+
     if (HUBSPOT_ACCESS_TOKEN && HUBSPOT_ACCESS_TOKEN.length > 0) {
-      // Use Private Apps API (Contacts API v3) for direct contact creation
+      console.log("[v0] Using Private Apps API")
       return await createContactWithAPI(body)
     } else if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID) {
-      // Use Forms API v3 (no token required)
+      console.log("[v0] Using Forms API v3")
       return await submitToFormsAPI(body)
     } else {
-      return NextResponse.json({ error: "HubSpot integration not configured" }, { status: 500 })
+      console.error("[v0] HubSpot not configured properly")
+      return NextResponse.json(
+        {
+          error:
+            "HubSpot integration not configured. Please add HUBSPOT_PORTAL_ID and HUBSPOT_FORM_ID to environment variables.",
+          configured: false,
+        },
+        { status: 500 },
+      )
     }
   } catch (error) {
-    return NextResponse.json({ error: "Failed to submit contact information" }, { status: 500 })
+    console.error("[v0] HubSpot API error:", error)
+    return NextResponse.json(
+      {
+        error: "Failed to submit contact information",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 },
+    )
   }
 }
 
@@ -88,8 +110,11 @@ async function createContactWithAPI(body: any) {
     body: JSON.stringify(contactData),
   })
 
+  console.log("[v0] HubSpot Contacts API response status:", response.status)
+
   if (!response.ok) {
     const errorData = await response.json()
+    console.error("[v0] HubSpot Contacts API error:", errorData)
     throw new Error(`HubSpot API error: ${errorData.message || response.statusText}`)
   }
 
@@ -161,7 +186,11 @@ async function submitToFormsAPI(body: any) {
     body: JSON.stringify(hubspotData),
   })
 
+  console.log("[v0] HubSpot Forms API response status:", response.status)
+
   if (!response.ok) {
+    const errorText = await response.text()
+    console.error("[v0] HubSpot Forms API error:", errorText)
     throw new Error(`HubSpot API error: ${response.status}`)
   }
 

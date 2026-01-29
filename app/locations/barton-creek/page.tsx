@@ -52,9 +52,9 @@ export default function BartonCreekPage() {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
                     href="#contact"
-                    className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-md font-medium transition-colors animate-pulse hover:animate-none"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-md font-medium transition-colors"
                   >
-                    Start Your Project
+                    Request a Consultation
                   </Link>
                   <Link
                     href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
@@ -118,7 +118,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Custom Estate Homes</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Custom Estate Homes</h3>
                   <p className="text-gray-300 text-sm">
                     Ground-up construction of luxury homes with resort-level amenities
                   </p>
@@ -128,7 +128,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Outdoor Living Complexes</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Outdoor Living Complexes</h3>
                   <p className="text-gray-300 text-sm">
                     Covered patios, outdoor kitchens, fireplaces, and entertainment areas
                   </p>
@@ -138,7 +138,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Pool Houses & Cabanas</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Pool Houses & Cabanas</h3>
                   <p className="text-gray-300 text-sm">
                     Custom structures with full kitchens, baths, and entertainment systems
                   </p>
@@ -148,7 +148,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Whole Estate Renovations</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Whole Estate Renovations</h3>
                   <p className="text-gray-300 text-sm">Complete transformations maintaining property value</p>
                 </CardContent>
               </Card>
@@ -156,7 +156,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Guest Houses</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Guest Houses</h3>
                   <p className="text-gray-300 text-sm">Separate living quarters with full amenities</p>
                 </CardContent>
               </Card>
@@ -164,7 +164,7 @@ export default function BartonCreekPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Luxury Kitchen & Bath</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Luxury Kitchen & Bath</h3>
                   <p className="text-gray-300 text-sm">High-end finishes, custom cabinetry, and premium appliances</p>
                 </CardContent>
               </Card>
@@ -245,7 +245,7 @@ export default function BartonCreekPage() {
               href="https://www.google.com/search?client=mobilesearchapp&sca_esv=8a5138757e73c890&bih=820&biw=402&channel=iss&cs=1&hl=en&rlz=1MDAPLA_enUS1013US1013&v=393.0.825685754&kgmid=/g/11x5kcfr2r&q=PS+Premier+Construction&shndl=30&shem=bdse,shrtsdl&source=sh/x/loc/hdr/m1/5&kgs=38ded009b8beeab0&utm_source=bdse,shrtsdl,sh/x/loc/hdr/m1/5"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-medium transition-colors text-lg animate-pulse hover:animate-none"
+              className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full font-medium transition-colors text-lg"
             >
               <Star className="size-5" />
               Read Our Google Reviews

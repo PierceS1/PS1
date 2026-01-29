@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -95,7 +95,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
               onClick={() => setIsOpen(false)}
             >
               <Phone className="size-5" />
-              <span>Get a Free Quote</span>
+              <span>Request a Consultation</span>
             </Link>
           </div>
         </nav>

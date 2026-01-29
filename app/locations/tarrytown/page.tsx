@@ -117,7 +117,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Historic Home Restoration</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Historic Home Restoration</h3>
                   <p className="text-gray-300 text-sm">
                     Preserving original character while updating for modern living
                   </p>
@@ -127,7 +127,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Kitchen Remodels</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Kitchen Remodels</h3>
                   <p className="text-gray-300 text-sm">
                     Open concepts that maintain the home's architectural integrity
                   </p>
@@ -137,7 +137,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Primary Suite Additions</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Primary Suite Additions</h3>
                   <p className="text-gray-300 text-sm">Sympathetic additions that look original to the home</p>
                 </CardContent>
               </Card>
@@ -145,7 +145,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Bathroom Renovations</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Bathroom Renovations</h3>
                   <p className="text-gray-300 text-sm">Period-appropriate finishes with modern functionality</p>
                 </CardContent>
               </Card>
@@ -153,7 +153,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Basement Finishing</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Basement Finishing</h3>
                   <p className="text-gray-300 text-sm">Converting unused space into functional family areas</p>
                 </CardContent>
               </Card>
@@ -161,7 +161,7 @@ export default function TarrytownPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardContent className="p-6">
                   <Home className="size-8 text-brand-amber mb-3" />
-                  <h3 className="text-xl font-bold mb-2">Whole Home Renovations</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">Whole Home Renovations</h3>
                   <p className="text-gray-300 text-sm">Complete transformations maintaining neighborhood character</p>
                 </CardContent>
               </Card>

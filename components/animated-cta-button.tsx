@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useState } from "react"
@@ -14,15 +16,25 @@ interface AnimatedCTAButtonProps {
 export function AnimatedCTAButton({ href, children, className = "" }: AnimatedCTAButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith("#")) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }
+
   return (
     <Button
       asChild
       size="lg"
-      className={`bg-brand-red hover:bg-brand-red-dark text-white relative overflow-hidden group animate-pulse hover:animate-none ${className}`}
+      className={`bg-brand-red hover:bg-brand-red-dark text-white relative overflow-hidden group ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link href={href}>
+      <Link href={href} onClick={handleClick}>
         <span className="relative z-10 flex items-center">
           {children}
           <svg

@@ -101,7 +101,7 @@ export function NeighborhoodsCarousel() {
           <p className="text-xl md:text-2xl text-gray-200 drop-shadow-md max-w-xl">{current.description}</p>
           <Link
             href={current.href}
-            className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md text-base font-medium transition-all duration-200 bg-brand-red hover:bg-red-700 text-white shadow-lg hover:shadow-xl animate-pulse hover:animate-none"
+            className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md text-base font-medium transition-all duration-200 bg-brand-red hover:bg-red-700 text-white shadow-lg hover:shadow-xl"
           >
             View Projects
           </Link>

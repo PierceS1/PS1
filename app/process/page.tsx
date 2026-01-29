@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ImprovedHeader } from "@/components/improved-header"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
-import { ClipboardCheck, Palette, CheckCircle } from "lucide-react"
+import { ClipboardCheck, Palette, CheckCircle, Calendar, Star, DollarSign } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -23,6 +23,101 @@ export default function ProcessPage() {
                 From initial consultation to final walkthrough, we guide you through every step with clarity and
                 professionalism.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-black text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-6">Your Vision, Our Expertise</h2>
+              <p className="text-xl text-gray-300">
+                We lead your project from first walk-through to final punch list with transparency, quality, and care.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto slide-up visible">
+              <div className="space-y-6 text-gray-300 text-lg">
+                <p>
+                  You want a remodel that increases value and improves how you live. You need a builder who listens,
+                  plans, and delivers without delays and excuses.
+                </p>
+                <p className="font-semibold text-white text-xl">
+                  PS Premier Construction leads your project from first walk-through to final punch list.
+                </p>
+                <div className="mt-8">
+                  <h3 className="text-2xl font-bold text-white mb-6">We manage:</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Design coordination</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Material selections</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Scheduling and trades</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-brand-amber flex-shrink-0 mt-1" />
+                      <span>Budget control</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-gray-900 text-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12 text-center fade-in visible">
+                What You Get
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <CheckCircle className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Clean and Organized Job Sites</h3>
+                    <p className="text-gray-300">
+                      Your property is treated with respect. We maintain clean work areas and protect your home
+                      throughout construction.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <Calendar className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Clear Communication</h3>
+                    <p className="text-gray-300">
+                      Weekly updates keep you informed. No surprises, no guessing. You always know what's happening.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <Star className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Quality-Focused Trades</h3>
+                    <p className="text-gray-300">
+                      No low-bid crews. We work with skilled professionals who take pride in their craftsmanship.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-800 border-gray-700 card-hover-effect">
+                  <CardContent className="p-6">
+                    <DollarSign className="h-8 w-8 text-brand-amber mb-3" />
+                    <h3 className="text-xl font-bold text-white mb-2">Transparent Pricing</h3>
+                    <p className="text-gray-300">
+                      Clear pricing and change order control. You know what you're paying for and why.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
@@ -146,7 +241,7 @@ export default function ProcessPage() {
               </div>
 
               <div className="mt-12 text-center float-animation">
-                <AnimatedCTAButton href="/#contact">Start Your Project Today</AnimatedCTAButton>
+                <AnimatedCTAButton href="/#contact">Request a Consultation</AnimatedCTAButton>
               </div>
             </div>
           </div>
@@ -235,7 +330,7 @@ export default function ProcessPage() {
               </div>
 
               <div className="mt-12 text-center float-animation">
-                <AnimatedCTAButton href="/#contact">Discuss Your Material Options</AnimatedCTAButton>
+                <AnimatedCTAButton href="/#contact">Request a Consultation</AnimatedCTAButton>
               </div>
             </div>
           </div>
