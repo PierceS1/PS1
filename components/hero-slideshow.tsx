@@ -86,7 +86,7 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
   return (
     <section
       id="home"
-      className="w-full relative text-white overflow-hidden"
+      className="w-full relative text-white overflow-hidden hero-slideshow-section"
       style={{ minHeight: "100svh" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -98,14 +98,10 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
         return (
           <div
             key={slide.src}
-            className="absolute inset-0 z-0"
+            className="absolute inset-0"
             style={{
               opacity: isActive ? 1 : isPrev ? 1 : 0,
-              transition: isActive
-                ? "opacity 0.9s ease-in-out"
-                : isPrev
-                ? "opacity 0.9s ease-in-out"
-                : "none",
+              transition: isActive || isPrev ? "opacity 0.9s ease-in-out" : "none",
               zIndex: isActive ? 1 : isPrev ? 0 : -1,
             }}
           >
@@ -122,7 +118,6 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
               priority={i === 0}
               sizes="100vw"
             />
-            {/* Gradient overlay: stronger at top (header) and bottom (content) */}
             <div
               className="absolute inset-0"
               style={{
@@ -135,49 +130,46 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
       })}
 
       {/* Content layer */}
-      <div className="relative z-10 flex flex-col justify-end" style={{ minHeight: "100svh" }}>
+      <div className="relative flex flex-col justify-end" style={{ zIndex: 10, minHeight: "100svh" }}>
+
+        {/* Centered hero CTA */}
+        {children && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ zIndex: 20 }}>
+            <div className="pointer-events-auto w-full">{children}</div>
+          </div>
+        )}
+
         {/* Slide caption bottom-left */}
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24 md:pb-28">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24 md:pb-28" style={{ zIndex: 20 }}>
           <div className="max-w-2xl">
-            {/* Category tag */}
             <div
               key={`tag-${current}`}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 hero-fade-up"
               style={{
                 background: "rgba(196,150,50,0.20)",
                 backdropFilter: "blur(6px)",
                 border: "1px solid rgba(196,150,50,0.4)",
-                animation: "fadeSlideUp 0.7s ease both",
               }}
             >
               <span className="text-sm font-semibold" style={{ color: "#C49632" }}>
                 {slides[current].location}
               </span>
             </div>
-
-            {/* Caption heading */}
             <h2
               key={`cap-${current}`}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-6"
-              style={{ animation: "fadeSlideUp 0.8s 0.1s ease both" }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-6 hero-fade-up-delay"
             >
               {slides[current].caption}
             </h2>
           </div>
         </div>
 
-        {/* Hero CTA (passed as children from page) */}
-        {children && (
-          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <div className="pointer-events-auto">{children}</div>
-          </div>
-        )}
-
-        {/* Navigation arrows */}
+        {/* Nav arrows */}
         <button
           onClick={() => { setPaused(true); goPrev() }}
-          className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+          className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
           style={{
+            zIndex: 20,
             background: "rgba(255,255,255,0.12)",
             backdropFilter: "blur(8px)",
             border: "1px solid rgba(255,255,255,0.25)",
@@ -188,8 +180,9 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
         </button>
         <button
           onClick={() => { setPaused(true); goNext() }}
-          className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+          className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
           style={{
+            zIndex: 20,
             background: "rgba(255,255,255,0.12)",
             backdropFilter: "blur(8px)",
             border: "1px solid rgba(255,255,255,0.25)",
@@ -199,8 +192,8 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
           <ChevronRight className="w-5 h-5 text-white" />
         </button>
 
-        {/* Dot indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+        {/* Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2" style={{ zIndex: 20 }}>
           {slides.map((_, i) => (
             <button
               key={i}
@@ -217,28 +210,17 @@ export function HeroSlideshow({ children }: { children?: React.ReactNode }) {
         </div>
 
         {/* Progress bar */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 h-[3px]" style={{ background: "rgba(255,255,255,0.1)" }}>
+        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ zIndex: 20, background: "rgba(255,255,255,0.1)" }}>
           <div
             key={`progress-${current}`}
-            className="h-full"
+            className="h-full hero-progress-bar"
             style={{
               background: "#C49632",
-              animation: paused ? "none" : "progressBar 5.5s linear forwards",
+              animationPlayState: paused ? "paused" : "running",
             }}
           />
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeSlideUp {
-          from { opacity: 0; transform: translateY(18px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes progressBar {
-          from { width: 0%; }
-          to   { width: 100%; }
-        }
-      `}</style>
     </section>
   )
 }
