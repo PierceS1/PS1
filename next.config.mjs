@@ -4,7 +4,15 @@ const nextConfig = {
   images: {
     domains: ['hebbkx1anhila5yf.public.blob.vercel-storage.com', 'v0.blob.com'],
     formats: ['image/avif', 'image/webp'],
-    unoptimized: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/portfolio',
+        permanent: true,
+      },
+    ]
   },
   typescript: {
     // During development, type errors won't stop the build

@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="w-full bg-gray-950">
+          <section id="neighborhoods" className="w-full bg-gray-950">
             <div className="text-center py-8 md:py-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Austin's Premier Neighborhoods</h2>
               <p className="text-gray-300 text-lg">Explore our luxury projects across Central Texas</p>
@@ -138,7 +138,7 @@ export default function HomePage() {
 
           <FeaturedProjectsTabs />
 
-          <section className="w-full py-12 md:py-20 bg-white">
+          <section id="services" className="w-full py-12 md:py-20 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div ref={aboutAnimation.ref} className={`fade-in ${aboutAnimation.isVisible ? "visible" : ""}`}>
                 <div className="max-w-4xl mx-auto mb-16">
