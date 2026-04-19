@@ -642,26 +642,3 @@ html {
     scroll-behavior: auto;
   }
 }
-
-/* ── Hero Slideshow animations ── */
-@keyframes heroFadeSlideUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroProgressBar {
-  from { width: 0%; }
-  to   { width: 100%; }
-}
-
-.hero-fade-up {
-  animation: heroFadeSlideUp 0.7s ease both;
-}
-
-.hero-fade-up-delay {
-  animation: heroFadeSlideUp 0.8s 0.1s ease both;
-}
-
-.hero-progress-bar {
-  animation: heroProgressBar 5.5s linear forwards;
-}

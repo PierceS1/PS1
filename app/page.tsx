@@ -29,7 +29,6 @@ import { FAQSchema } from "@/app/components/faq-schema"
 import { BreadcrumbSchema } from "@/app/components/breadcrumb-schema"
 import { NeighborhoodsCarousel } from "@/components/neighborhoods-carousel"
 import { FeaturedProjectsTabs } from "@/components/featured-projects-tabs"
-import { HeroSlideshow } from "@/components/hero-slideshow"
 
 export default function HomePage() {
   // Animation hooks
@@ -70,32 +69,47 @@ export default function HomePage() {
         <ImprovedHeader />
 
         <main className="flex-1">
-          {/* Hero Slideshow */}
-          <HeroSlideshow>
-            <div
-              ref={heroAnimation.ref}
-              className={`max-w-3xl mx-auto text-center px-4 ${heroAnimation.isVisible ? "visible" : ""}`}
-            >
-              <div className={`space-y-6 fade-in ${heroAnimation.isVisible ? "visible" : ""}`}>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-                  Luxury Remodels and Residential Development in Austin
-                </h1>
-                <p className="max-w-[700px] mx-auto text-gray-100 text-lg md:text-xl drop-shadow-md">
-                  Serving West Lake Hills, Tarrytown, Barton Creek, and Central Austin with premium residential
-                  construction services. Clear execution. Clean communication. Your trusted construction partner.
-                </p>
-                <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center pt-4">
-                  <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
-                  <Link
-                    href="#neighborhoods"
-                    className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white animate-pulse hover:animate-none"
-                  >
-                    View Our Work
-                  </Link>
+          {/* Hero Section with Animation */}
+          <section id="home" className="w-full relative py-12 md:py-24 lg:py-32 text-white">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/img-0125.jpeg"
+                alt="Luxury custom home in Austin by PS Premier Construction"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-black/50" />
+            </div>
+
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+              <div
+                ref={heroAnimation.ref}
+                className={`max-w-3xl mx-auto text-center ${heroAnimation.isVisible ? "visible" : ""}`}
+              >
+                <div className={`space-y-6 fade-in ${heroAnimation.isVisible ? "visible" : ""}`}>
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
+                    Luxury Remodels and Residential Development in Austin
+                  </h1>
+                  <p className="max-w-[700px] mx-auto text-gray-100 text-lg md:text-xl drop-shadow-md">
+                    Serving West Lake Hills, Tarrytown, Barton Creek, and Central Austin with premium residential
+                    construction services. Clear execution. Clean communication. Your trusted construction partner.
+                  </p>
+                  <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center pt-4">
+                    <AnimatedCTAButton href="#contact">Request a Consultation</AnimatedCTAButton>
+                    <Link
+                      href="#neighborhoods"
+                      className="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md text-sm font-medium transition-all duration-200 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-black text-white animate-pulse hover:animate-none"
+                    >
+                      View Our Work
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </HeroSlideshow>
+          </section>
 
           <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
