@@ -361,7 +361,7 @@ export default function HomePage() {
                     <div className="relative">
                       <div className="aspect-[2/3] max-w-md mx-auto relative rounded-xl overflow-hidden shadow-2xl ring-2 ring-brand-amber/20 hover:ring-brand-amber/40 transition-all duration-300">
                         <Image
-                          src="/pierce-speyrer-photo.png"
+                          src="/images/pierce-speyrer.png"
                           alt="Pierce Speyrer, President of PS Premier Construction"
                           fill
                           className="object-cover object-center"
