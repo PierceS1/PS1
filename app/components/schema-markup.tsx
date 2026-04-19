@@ -22,7 +22,7 @@ export function SchemaMarkup() {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "West Lake Hills",
+      streetAddress: "",
       addressLocality: "Austin",
       addressRegion: "TX",
       postalCode: "78746",

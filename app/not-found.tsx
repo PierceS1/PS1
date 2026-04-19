@@ -32,8 +32,8 @@ export default function NotFound() {
               512-798-0701
             </a>
             <span className="hidden sm:inline text-muted-foreground">|</span>
-            <a href="mailto:ps@pspremierconstruction.com" className="text-brand-amber hover:underline">
-              ps@pspremierconstruction.com
+            <a href="mailto:info@pspremierconstruction.com" className="text-brand-amber hover:underline">
+              info@pspremierconstruction.com
             </a>
           </div>
         </div>

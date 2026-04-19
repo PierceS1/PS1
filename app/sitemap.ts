@@ -86,16 +86,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Other pages
     {
-      url: `${baseUrl}/portfolio`,
+      url: `${baseUrl}/testimonials`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/process`,
+      url: `${baseUrl}/thank-you`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ]
 }

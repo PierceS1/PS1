@@ -14,6 +14,7 @@ export function ImprovedHeader() {
     { href: "/process", label: "Process", id: "process" },
     { href: "/#services", label: "Services", id: "services" },
     { href: "/portfolio", label: "Portfolio", id: "portfolio" },
+    { href: "/testimonials", label: "Testimonials", id: "testimonials" },
   ]
 
   useEffect(() => {
@@ -72,14 +73,14 @@ export function ImprovedHeader() {
                   href={link.href}
                   className={`relative px-4 py-2 text-[15px] font-medium tracking-tight transition-all duration-200
                 ${
-                  currentSection === link.id
+                  currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")
                     ? "text-white"
                     : "text-white/80 hover:text-white"
                 }
               `}
                 >
                   {link.label}
-                  {currentSection === link.id && (
+                  {(currentSection === link.id || (link.href === "/testimonials" && link.id === "testimonials")) && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></span>
                   )}
                 </Link>

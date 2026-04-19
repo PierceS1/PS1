@@ -10,9 +10,9 @@ const KNOWLEDGE_BASE = {
   areas:
     "We serve West Lake Hills, Tarrytown, Barton Creek, Rollingwood, Davenport Ranch, Cedar Park, and the greater Austin area. We'd love to work on your project!",
   contact:
-    "Call us at (512) 798-0701 or email ps@pspremierconstruction.com. We respond within 24 hours and offer free consultations!",
+    "Call us at (512) 968-0169 or email info@pspremierconstruction.com. We respond within 24 hours and offer free consultations!",
   estimate:
-    "Great! We offer free, no-obligation estimates. Our owner Pierce Speyrer personally reviews every project. Call (512) 798-0701 or share your contact info and we'll reach out within 24 hours.",
+    "Great! We offer free, no-obligation estimates. Our owner Pierce Speyrer personally reviews every project. Call (512) 968-0169 or share your contact info and we'll reach out within 24 hours.",
   experience:
     "PS Premier Construction has 10+ years of experience in Austin. We're licensed, insured, and specialize in high-quality craftsmanship for both residential and commercial projects.",
   process:
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         message:
-          "I'm having trouble right now. Please call us at (512) 798-0701 or email ps@pspremierconstruction.com for immediate assistance.",
+          "I'm having trouble right now. Please call us at (512) 968-0169 or email info@pspremierconstruction.com for immediate assistance.",
       },
       { status: 500 },
     )

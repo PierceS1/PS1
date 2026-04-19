@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/thank-you", "/admin/", "/api/"],
+      disallow: ["/thank-you"],
     },
     sitemap: "https://pspremierconstruction.com/sitemap.xml",
   }

@@ -1,14 +1,4 @@
-import type { Metadata } from "next"
 import Link from "next/link"
-
-export const metadata: Metadata = {
-  title: "Client Testimonials - PS Premier Construction",
-  description: "Read what Austin homeowners say about PS Premier Construction's luxury remodeling and custom home building services.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
 
 export default function TestimonialsPage() {
   return (
