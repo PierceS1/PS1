@@ -80,7 +80,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: `"Remote Diesel Tuning" <${process.env.EMAIL_FROM || process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO || "info@remotedieseltuning.com",
+      to: process.env.EMAIL_TO || "remotedieseltuning@proton.me",
       replyTo: email,
       subject: `New Tune Request: ${firstName || ""} ${lastName || ""} — ${projectType || "General inquiry"}`.trim(),
       html,

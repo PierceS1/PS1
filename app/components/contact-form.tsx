@@ -194,7 +194,7 @@ export function ContactForm() {
 
       {submitStatus === "error" && (
         <div className="rounded-md bg-red-900/50 border border-red-700 p-3 text-red-200 text-sm">
-          There was an error submitting your request. Please email us at info@remotedieseltuning.com.
+          There was an error submitting your request. Please email us at remotedieseltuning@proton.me or call 337-510-0422.
         </div>
       )}
 

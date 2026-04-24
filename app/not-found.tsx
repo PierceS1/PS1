@@ -27,9 +27,14 @@ export default function NotFound() {
         </div>
         <div className="pt-8 border-t border-gray-800 mt-8">
           <p className="text-sm text-gray-400 mb-4">Need help? Contact us:</p>
-          <a href="mailto:info@remotedieseltuning.com" className="text-brand-red hover:underline">
-            info@remotedieseltuning.com
-          </a>
+          <div className="flex flex-col items-center gap-2">
+            <a href="mailto:remotedieseltuning@proton.me" className="text-brand-red hover:underline">
+              remotedieseltuning@proton.me
+            </a>
+            <a href="tel:+13375100422" className="text-brand-red hover:underline">
+              337-510-0422
+            </a>
+          </div>
         </div>
       </div>
     </div>

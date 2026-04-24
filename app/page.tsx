@@ -200,8 +200,8 @@ export default function HomePage() {
                     <Mail className="size-5 text-brand-red mt-1 shrink-0" />
                     <div>
                       <div className="font-semibold text-white">Email</div>
-                      <a href="mailto:info@remotedieseltuning.com" className="text-gray-400 hover:text-brand-red">
-                        info@remotedieseltuning.com
+                      <a href="mailto:remotedieseltuning@proton.me" className="text-gray-400 hover:text-brand-red">
+                        remotedieseltuning@proton.me
                       </a>
                     </div>
                   </div>
@@ -209,7 +209,9 @@ export default function HomePage() {
                     <Phone className="size-5 text-brand-red mt-1 shrink-0" />
                     <div>
                       <div className="font-semibold text-white">Phone</div>
-                      <div className="text-gray-400">By appointment — use the form to get started</div>
+                      <a href="tel:+13375100422" className="text-gray-400 hover:text-brand-red">
+                        337-510-0422
+                      </a>
                     </div>
                   </div>
                 </div>
