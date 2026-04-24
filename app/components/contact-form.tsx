@@ -144,7 +144,7 @@ export function ContactForm() {
           htmlFor="projectType"
           className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Project Type
+          Tune Type
         </label>
         <select
           id="projectType"
@@ -155,13 +155,16 @@ export function ContactForm() {
           required
           aria-required="true"
         >
-          <option value="">Select project type</option>
-          <option value="Whole-Home Luxury Remodel">Whole-Home Luxury Remodel</option>
-          <option value="Signature Kitchen & Bath">Signature Kitchen & Bath</option>
-          <option value="Commercial Office Transformation">Commercial Office Transformation</option>
-          <option value="Short-Term Rental Luxe Package">Short-Term Rental Luxe Package</option>
-          <option value="Land & Residential Development">Land & Residential Development</option>
-          <option value="Other">Other</option>
+          <option value="">Select tune type</option>
+          <option value="Cummins — Performance">Cummins — Performance</option>
+          <option value="Cummins — Tow / Daily">Cummins — Tow / Daily</option>
+          <option value="Powerstroke — Performance">Powerstroke — Performance</option>
+          <option value="Powerstroke — Tow / Daily">Powerstroke — Tow / Daily</option>
+          <option value="Duramax — Performance">Duramax — Performance</option>
+          <option value="Duramax — Tow / Daily">Duramax — Tow / Daily</option>
+          <option value="Economy / MPG Tune">Economy / MPG Tune</option>
+          <option value="Transmission Tune">Transmission Tune</option>
+          <option value="Diagnostics / Other">Diagnostics / Other</option>
         </select>
       </div>
       <div className="space-y-2">
@@ -169,7 +172,7 @@ export function ContactForm() {
           htmlFor="message"
           className="text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Project Details
+          Truck Details
         </label>
         <textarea
           id="message"
@@ -177,7 +180,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           className="flex min-h-[120px] w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white ring-offset-background placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          placeholder="Tell us about your project..."
+          placeholder="Year, engine, transmission, mods, goals…"
           required
           aria-required="true"
         />
@@ -191,34 +194,18 @@ export function ContactForm() {
 
       {submitStatus === "error" && (
         <div className="rounded-md bg-red-900/50 border border-red-700 p-3 text-red-200 text-sm">
-          There was an error submitting your request. Please try again or call us at 512-798-0701.
+          There was an error submitting your request. Please email us at info@remotedieseltuning.com.
         </div>
       )}
 
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-10 px-4 py-2 rounded-md bg-brand-red text-white font-medium hover:bg-brand-red-dark focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 animate-pulse hover:animate-none disabled:opacity-50"
+        className="w-full h-10 px-4 py-2 rounded-md bg-brand-red text-white font-medium hover:bg-brand-red-dark focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 disabled:opacity-50"
         aria-label="Submit contact form"
       >
-        {isSubmitting ? "Submitting..." : "Submit Request"}
+        {isSubmitting ? "Submitting..." : "Request a Tune"}
       </Button>
-
-      <div className="text-center">
-        <p className="text-sm text-gray-400 mb-2">Or schedule a meeting directly:</p>
-        <Button
-          type="button"
-          className="w-full bg-brand-red text-white hover:bg-brand-red-dark animate-pulse hover:animate-none"
-          onClick={() =>
-            window.open(
-              process.env.NEXT_PUBLIC_HUBSPOT_MEETING_LINK || "https://meetings.hubspot.com/your-link",
-              "_blank",
-            )
-          }
-        >
-          Schedule a Consultation
-        </Button>
-      </div>
     </form>
   )
 }

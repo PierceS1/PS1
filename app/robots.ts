@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/thank-you"],
     },
-    sitemap: "https://pspremierconstruction.com/sitemap.xml",
+    sitemap: "https://www.remotedieseltuning.com/sitemap.xml",
   }
 }

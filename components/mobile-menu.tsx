@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -94,8 +94,8 @@ export function MobileMenu({ links }: MobileMenuProps) {
               className="flex items-center justify-center gap-2 w-full px-6 py-4 rounded-lg text-base font-semibold transition-all duration-200 bg-brand-red hover:bg-brand-red-dark text-white shadow-md hover:shadow-lg active:scale-[0.98]"
               onClick={() => setIsOpen(false)}
             >
-              <Phone className="size-5" />
-              <span>Get a Free Quote</span>
+              <Mail className="size-5" />
+              <span>Request a Tune</span>
             </Link>
           </div>
         </nav>

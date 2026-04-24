@@ -1,24 +1,22 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { ChatWidget } from "@/components/chat-widget"
-import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "PS Premier Construction - Austin's Premier Construction Company",
+  title: "Remote Diesel Tuning — Custom ECU Tuning for Cummins, Powerstroke & Duramax",
   description:
-    "Quality construction and remodeling services for residential and commercial projects in Austin, Texas. Specializing in luxury remodels, kitchen & bath renovations, and commercial transformations.",
+    "Custom ECU calibrations for diesel trucks, shipped nationwide. Performance and economy tunes for Cummins, Powerstroke, and Duramax built by experienced diesel calibrators.",
   keywords:
-    "construction, remodeling, Austin, Texas, luxury remodels, kitchen renovation, bathroom renovation, commercial construction, residential construction, home renovation",
-  authors: [{ name: "PS Premier Construction" }],
-  creator: "PS Premier Construction",
-  publisher: "PS Premier Construction",
+    "remote diesel tuning, ECU tuning, custom diesel tunes, Cummins tuning, Powerstroke tuning, Duramax tuning, diesel performance, mail-in tuning, diesel calibration",
+  authors: [{ name: "Remote Diesel Tuning" }],
+  creator: "Remote Diesel Tuning",
+  publisher: "Remote Diesel Tuning",
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://pspremierconstruction.com"),
+  metadataBase: new URL("https://www.remotedieseltuning.com"),
   alternates: {
     canonical: "/",
   },
@@ -27,28 +25,19 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png" }],
   },
   openGraph: {
-    title: "PS Premier Construction - Austin's Premier Construction Company",
+    title: "Remote Diesel Tuning — Custom ECU Tuning for Cummins, Powerstroke & Duramax",
     description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
-    url: "https://pspremierconstruction.com",
-    siteName: "PS Premier Construction",
+      "Custom ECU calibrations for diesel trucks, shipped nationwide. Dyno-proven performance and economy tunes.",
+    url: "https://www.remotedieseltuning.com",
+    siteName: "Remote Diesel Tuning",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/images/ps-premier-logo-gold.png",
-        width: 1200,
-        height: 630,
-        alt: "PS Premier Construction Logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PS Premier Construction - Austin's Premier Construction Company",
+    title: "Remote Diesel Tuning — Custom ECU Tuning for Cummins, Powerstroke & Duramax",
     description:
-      "Quality construction and remodeling services for residential and commercial projects in Austin, Texas.",
-    images: ["/images/ps-premier-logo-gold.png"],
+      "Custom ECU calibrations for diesel trucks, shipped nationwide. Dyno-proven performance and economy tunes.",
   },
   robots: {
     index: true,
@@ -61,7 +50,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -71,38 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <Script id="tealium-utag-data" strategy="beforeInteractive">
-          {`var utag_data = {};`}
-        </Script>
-        <Script id="tealium-utag" strategy="afterInteractive">
-          {`
-            (function(a,b,c,d){
-              a='https://tags.tiqcdn.com/utag/marketingcenter/common/prod/utag.js';
-              b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-              a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-            })();
-          `}
-        </Script>
-        <Script id="tealium-parameters" strategy="beforeInteractive">
-          {`window.Parameters = window.Parameters || {ExternalUid: 'LOC1B02B18A7'}`}
-        </Script>
-
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-QF8GS27JKD" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-QF8GS27JKD');
-          `}
-        </Script>
-      </head>
-      <body>
-        {children}
-        <ChatWidget />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
