@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState<string>("")
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,6 +29,7 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
+    setErrorMessage("")
 
     try {
       const response = await fetch("/api/contact", {
@@ -52,9 +54,16 @@ export function ContactForm() {
           message: "",
         })
       } else {
+        let detail = ""
+        try {
+          const data = await response.json()
+          if (data && typeof data.error === "string") detail = data.error
+        } catch {}
+        setErrorMessage(detail)
         setSubmitStatus("error")
       }
     } catch (error) {
+      setErrorMessage("")
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -194,6 +203,7 @@ export function ContactForm() {
 
       {submitStatus === "error" && (
         <div className="rounded-md bg-red-900/50 border border-red-700 p-3 text-red-200 text-sm">
+          {errorMessage ? `${errorMessage} ` : ""}
           There was an error submitting your request. Please email us at remotedieseltuning@proton.me or call 337-510-0422.
         </div>
       )}
