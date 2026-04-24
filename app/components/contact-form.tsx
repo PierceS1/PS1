@@ -5,11 +5,40 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
+const FALLBACK_EMAIL = "remotedieseltuning@proton.me"
+
+type FormData = {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  projectType: string
+  message: string
+}
+
+function buildMailto(data: FormData): string {
+  const subject = `New Tune Request: ${data.firstName} ${data.lastName}${
+    data.projectType ? ` — ${data.projectType}` : ""
+  }`.trim()
+  const lines = [
+    `Name: ${data.firstName} ${data.lastName}`.trim(),
+    `Email: ${data.email}`,
+    `Phone: ${data.phone || "—"}`,
+    `Tune Type: ${data.projectType || "—"}`,
+    "",
+    "Truck Details:",
+    data.message || "—",
+  ]
+  const body = lines.join("\n")
+  return `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error" | "fallback">("idle")
   const [errorMessage, setErrorMessage] = useState<string>("")
-  const [formData, setFormData] = useState({
+  const [mailtoHref, setMailtoHref] = useState<string>("")
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
@@ -25,11 +54,24 @@ export function ContactForm() {
     })
   }
 
+  const triggerMailtoFallback = (data: FormData, detail: string) => {
+    const href = buildMailto(data)
+    setMailtoHref(href)
+    setErrorMessage(detail)
+    setSubmitStatus("fallback")
+    try {
+      window.location.href = href
+    } catch {
+      // Visible link below is the user-gesture fallback when navigation is blocked.
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
     setErrorMessage("")
+    setMailtoHref("")
 
     try {
       const response = await fetch("/api/contact", {
@@ -59,12 +101,16 @@ export function ContactForm() {
           const data = await response.json()
           if (data && typeof data.error === "string") detail = data.error
         } catch {}
-        setErrorMessage(detail)
-        setSubmitStatus("error")
+
+        if (response.status === 503 || response.status === 502) {
+          triggerMailtoFallback(formData, detail)
+        } else {
+          setErrorMessage(detail)
+          setSubmitStatus("error")
+        }
       }
-    } catch (error) {
-      setErrorMessage("")
-      setSubmitStatus("error")
+    } catch {
+      triggerMailtoFallback(formData, "")
     } finally {
       setIsSubmitting(false)
     }
@@ -205,6 +251,36 @@ export function ContactForm() {
         <div className="rounded-md bg-red-900/50 border border-red-700 p-3 text-red-200 text-sm">
           {errorMessage ? `${errorMessage} ` : ""}
           There was an error submitting your request. Please email us at remotedieseltuning@proton.me or call 337-510-0422.
+        </div>
+      )}
+
+      {submitStatus === "fallback" && (
+        <div
+          role="alert"
+          aria-live="polite"
+          className="rounded-md bg-amber-900/40 border border-amber-600 p-3 text-amber-100 text-sm space-y-3"
+        >
+          <p>
+            {errorMessage ? `${errorMessage} ` : "Our online form is temporarily unavailable. "}
+            We&apos;ve opened your email app with your details prefilled — just press send. If nothing opened, use the
+            buttons below.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <a
+              href={mailtoHref || `mailto:${FALLBACK_EMAIL}`}
+              className="inline-flex items-center justify-center h-10 px-4 rounded-md bg-brand-red text-white font-medium hover:bg-brand-red-dark focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2"
+              aria-label="Open your email app to send this request"
+            >
+              Open Email App
+            </a>
+            <a
+              href="tel:+13375100422"
+              className="inline-flex items-center justify-center h-10 px-4 rounded-md border border-amber-500 text-amber-100 font-medium hover:bg-amber-900/30 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+              aria-label="Call Remote Diesel Tuning at 337-510-0422"
+            >
+              Call 337-510-0422
+            </a>
+          </div>
         </div>
       )}
 
