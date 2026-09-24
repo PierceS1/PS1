@@ -12,6 +12,7 @@ export function ImprovedHeader() {
     { href: "/", label: "Home", id: "home" },
     { href: "/#services", label: "Services", id: "services" },
     { href: "/#process", label: "Process", id: "process" },
+    { href: "/#reviews", label: "Reviews", id: "reviews" },
     { href: "/#contact", label: "Contact", id: "contact" },
   ]
 

@@ -4,6 +4,7 @@ import { ImprovedHeader } from "@/components/improved-header"
 import { StickyContactButton } from "@/components/sticky-contact-button"
 import { AnimatedCTAButton } from "@/components/animated-cta-button"
 import { ContactForm } from "@/app/components/contact-form"
+import { CustomerReviews } from "@/components/customer-reviews"
 
 export default function HomePage() {
   return (
@@ -185,8 +186,11 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Reviews */}
+        <CustomerReviews />
+
         {/* Contact */}
-        <section id="contact" className="w-full py-16 md:py-24 bg-black">
+        <section id="contact" className="w-full py-16 md:py-24 bg-black border-t border-gray-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 max-w-6xl mx-auto">
               <div>
